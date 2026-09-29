@@ -66,17 +66,17 @@ python3 -m http.server 8000
 > 独自ドメインを使う場合は Pages の設定画面で Custom domain を設定してください
 > （`CNAME` ファイルが自動生成されます）。
 
-### 公開後にやること
+現在の公開URL: **https://yutaro04.github.io/college-festival-2026/**
 
-`index.html` の先頭にある OGP 用 URL を、実際の公開URLに差し替えてください。
-SNS でシェアしたときのサムネイル表示に使われます。
+### OGP 画像について
+
+SNS でシェアしたときのサムネイルに使う `assets/img/ogp.png`（推奨 1200×630px）は未作成です。
+キービジュアル確定後にファイルを追加し、`index.html` の該当行を有効化してください。
 
 ```html
-<meta property="og:url"   content="https://example.github.io/college-festival-2026/">
-<meta property="og:image" content="https://example.github.io/college-festival-2026/assets/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://yutaro04.github.io/college-festival-2026/assets/img/ogp.png">
 ```
-
-OGP 画像（`assets/img/ogp.png`, 推奨 1200×630px）はキービジュアル確定後に追加してください。
 
 ---
 
@@ -101,7 +101,7 @@ OGP 画像（`assets/img/ogp.png`, 推奨 1200×630px）はキービジュアル
 | 箇所 | 内容 |
 | --- | --- |
 | `<head>` | OGP の URL・画像 |
-| ACCESS | 住所の正式表記、最寄駅からの所要時間、Google マップ埋め込み、撮影ポリシー、バリアフリー案内 |
+| ACCESS | 最寄駅からの所要時間、撮影ポリシー、バリアフリー案内 |
 | SUPPORT | 協賛資料・問い合わせ先、クラウドファンディングのリンク |
 | CTA / フッター | Instagram・note・問い合わせメールアドレス |
 | FAQ | カレッジ生向けの応募フォームリンク |
@@ -142,7 +142,7 @@ var FESTIVAL_START = '2026-11-14T10:00:00+09:00';
 - 会期：2026年11月14日(土)・15日(日)、Day1 は 11:00–18:00
 - Festival Week：11月9日(月)〜13日(金)、18:00–21:00
 - 前夜祭 11/13(金)、後夜祭 11/15(日)（いずれもカレッジ生向け）
-- 会場：SHIMOKITA COLLEGE（1F〜5F を開放）
+- 会場：SHIMOKITA COLLEGE（東京都世田谷区代田5-20-16、1F〜5F を開放）
 - 入場料は取らない方針
 - 会場内の支払いは回数券・受付決済方式（現金＋PayPay等を想定）
 - ステージ企画は全8枠（外部6・カレッジ生2）
@@ -156,7 +156,7 @@ var FESTIVAL_START = '2026-11-14T10:00:00+09:00';
 - 採択企画の一覧、物販ラインナップ、飲食メニュー
 - Festival Week の具体的な内容（一般公開プログラムの有無）
 - 撮影・肖像権ポリシー、アクセシビリティ案内
-- 住所の正式表記、最寄駅からの所要時間、駐輪の可否
+- 最寄駅からの所要時間、駐輪の可否
 - 公式SNSアカウント、問い合わせ先
 
 ### 公開前に判断が必要な箇所
