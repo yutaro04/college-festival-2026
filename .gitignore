@@ -1,0 +1,12 @@
+# ⚠️ 内部資料をリポジトリに入れない（GitHub Pages で公開されてしまいます）
+*.docx
+*.xlsx
+*.pptx
+*.pdf
+
+# OS / エディタ
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
