@@ -66,17 +66,17 @@ python3 -m http.server 8000
 > 独自ドメインを使う場合は Pages の設定画面で Custom domain を設定してください
 > （`CNAME` ファイルが自動生成されます）。
 
-### 公開後にやること
+現在の公開URL: **https://yutaro04.github.io/college-festival-2026/**
 
-`index.html` の先頭にある OGP 用 URL を、実際の公開URLに差し替えてください。
-SNS でシェアしたときのサムネイル表示に使われます。
+### OGP 画像について
+
+SNS でシェアしたときのサムネイルに使う `assets/img/ogp.png`（推奨 1200×630px）は未作成です。
+キービジュアル確定後にファイルを追加し、`index.html` の該当行を有効化してください。
 
 ```html
-<meta property="og:url"   content="https://example.github.io/college-festival-2026/">
-<meta property="og:image" content="https://example.github.io/college-festival-2026/assets/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="https://yutaro04.github.io/college-festival-2026/assets/img/ogp.png">
 ```
-
-OGP 画像（`assets/img/ogp.png`, 推奨 1200×630px）はキービジュアル確定後に追加してください。
 
 ---
 
