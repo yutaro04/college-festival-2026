@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第6回カレッジ文化祭〜まぜまぜ。〜｜SHIMOKITA COLLEGE</title>
+<meta name="description" content="2026年11月14日(土)・15日(日) 開催。SHIMOKITA COLLEGE に暮らすカレッジ生が年に一度ひらく「第6回カレッジ文化祭〜まぜまぜ。〜」。一人ひとりの好き・専門・問いが混ざり合う2日間。入場無料。">
+
+<!-- ▼ 公開URLが決まったら差し替えてください（OGPには絶対URLが必要です） -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="第6回カレッジ文化祭〜まぜまぜ。〜">
+<meta property="og:title" content="第6回カレッジ文化祭〜まぜまぜ。〜">
+<meta property="og:description" content="2026年11月14日(土)・15日(日)、SHIMOKITA COLLEGE。カレッジ生一人ひとりの好き・問い・専門が混ざり合う文化祭。">
+<meta property="og:url" content="https://example.github.io/college-festival-2026/">
+<meta property="og:image" content="https://example.github.io/college-festival-2026/assets/img/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">本文へスキップ</a>
+
+<!-- ============ ヘッダー ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="site-header__inner">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span class="brand__text">
+        <strong>まぜまぜ。</strong>
+        <small>第6回カレッジ文化祭</small>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="メインメニュー">
+      <ul class="nav__list">
+        <li><a href="#about">文化祭について</a></li>
+        <li><a href="#project">マイプロ・アワプロ</a></li>
+        <li><a href="#contents">コンテンツ</a></li>
+        <li><a href="#floor">フロア</a></li>
+        <li><a href="#schedule">日程</a></li>
+        <li><a href="#access">アクセス</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#support" class="nav__cta">協賛・応援</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      <span class="sr-only">メニューを開く</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ ヒーロー ============ -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+    <span class="blob blob--4"></span>
+  </div>
+
+  <div class="hero__inner">
+    <p class="hero__eyebrow">第6回カレッジ文化祭 ／ SHIMOKITA COLLEGE</p>
+
+    <h1 class="hero__title">
+      <span class="sr-only">第6回カレッジ文化祭 まぜまぜ。</span>
+      <span class="hero__title-main" aria-hidden="true">まぜまぜ<span class="hero__dot">。</span></span>
+    </h1>
+
+    <p class="hero__lead">
+      ひとりの「好き」も、まだ言葉になっていない「問い」も。<br>
+      ぜんぶ持ち寄って、混ぜてみる2日間。
+    </p>
+
+    <dl class="hero__meta">
+      <div>
+        <dt>会期</dt>
+        <dd>
+          <time datetime="2026-11-14">2026.11.14</time> <span>SAT</span> – <time datetime="2026-11-15">11.15</time> <span>SUN</span>
+        </dd>
+      </div>
+      <div>
+        <dt>時間</dt>
+        <dd>11:00 – 18:00 <span class="tag tag--tbd">予定</span></dd>
+      </div>
+      <div>
+        <dt>会場</dt>
+        <dd>SHIMOKITA COLLEGE（東京・下北沢）</dd>
+      </div>
+      <div>
+        <dt>入場</dt>
+        <dd>無料・どなたでも <span class="tag tag--tbd">詳細調整中</span></dd>
+      </div>
+    </dl>
+
+    <!-- カウントダウン（JSで更新。JS無効時は非表示） -->
+    <div class="countdown" id="countdown" hidden>
+      <span class="countdown__label">開幕まで</span>
+      <span class="countdown__num" id="countdownNum">–</span>
+      <span class="countdown__unit">日</span>
+    </div>
+
+    <p class="hero__note">
+      ※ このサイトは準備中です。決定した情報から順次公開していきます。
+    </p>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true"><span></span>SCROLL</div>
+</section>
+
+<!-- ============ ティッカー ============ -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>まぜまぜ。</span><span>MAZE MAZE</span><span>2026.11.14 – 11.15</span><span>SHIMOKITA COLLEGE</span>
+    <span>まぜまぜ。</span><span>MAZE MAZE</span><span>2026.11.14 – 11.15</span><span>SHIMOKITA COLLEGE</span>
+    <span>まぜまぜ。</span><span>MAZE MAZE</span><span>2026.11.14 – 11.15</span><span>SHIMOKITA COLLEGE</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="section section--about" id="about">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">ABOUT</p>
+      <h2 class="section__title">カレッジ文化祭とは</h2>
+    </header>
+
+    <div class="about__body">
+      <div class="about__text reveal">
+        <p class="lead">
+          カレッジ文化祭は、SHIMOKITA COLLEGE に居住するカレッジ生が年に一度開催する文化祭です。
+        </p>
+        <p>
+          今年のスローガンは「<strong>まぜまぜ。</strong>」。カレッジ生一人ひとりの経験・専門性・関心・問い・好きなことを、文化祭という機会を通して表に出し、互いを知り、それらがコラボレーションされる。そんな面白くて楽しい文化祭を目指しています。
+        </p>
+        <p>
+          文化祭当日は SHIMOKITA COLLEGE の1階から5階までを解放し、カレッジ生による飲食企画やプロジェクトの発表展示、ゲストを招いたトークセッション等を行います。
+        </p>
+      </div>
+
+      <figure class="about__quote reveal">
+        <blockquote>
+          <p>カレッジへの印象を、<br>「おもしろそう」から<br><em>「おもしろい」</em>へ。</p>
+        </blockquote>
+        <figcaption>
+          異質な他者が混ざり合う場所。その手ざわりを、2日間で持って帰ってもらえたら。
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- コンセプト -->
+    <div class="concept reveal">
+      <p class="concept__label">CONCEPT</p>
+      <p class="concept__title">コラボレーション</p>
+      <p class="concept__text">
+        隣にいる人と一緒に、一歩遠くの景色を見るための協働。<br>
+        単なる共同作業ではなく、新しい関係・学び・企画が生まれることを大切にしています。
+      </p>
+    </div>
+
+    <ul class="stats reveal">
+      <li>
+        <span class="stats__num">6</span>
+        <span class="stats__unit">回目</span>
+        <span class="stats__label">2026年で第6回目の開催</span>
+      </li>
+      <li>
+        <span class="stats__num">5</span>
+        <span class="stats__unit">フロア</span>
+        <span class="stats__label">1F〜5Fすべてを開放</span>
+      </li>
+      <li>
+        <span class="stats__num">120</span>
+        <span class="stats__unit">人<small>+</small></span>
+        <span class="stats__label">つくり手はカレッジ生</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ マイプロ・アワプロ ============ -->
+<section class="section section--project" id="project">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">MY PROJECT / OUR PROJECT</p>
+      <h2 class="section__title">マイプロ・アワプロ</h2>
+      <p class="section__desc">
+        カレッジ文化祭の中心にあるのは、カレッジ生ひとりひとりが立ち上げる企画です。
+      </p>
+    </header>
+
+    <div class="project">
+      <article class="project__card reveal" style="--card-accent: var(--c-blue)">
+        <p class="project__en">MY PROJECT</p>
+        <h3>マイプロ</h3>
+        <p>
+          カレッジ生が、自分の興味・関心・特技をゼロから自由に企画し、表現する枠です。
+          展示だけでなく、ワークショップや、空間そのものを使ったインタラクティブな企画も。
+        </p>
+      </article>
+
+      <article class="project__card project__card--accent reveal" style="--card-accent: var(--c-pink)">
+        <p class="project__en">OUR PROJECT</p>
+        <h3>アワプロ</h3>
+        <p>
+          2人以上の組み合わせから、普段は生まれにくい企画をつくる今年の重点施策。
+          「まぜまぜ。」を企画そのもので体現する枠です。委員会・ハウス・クラブによる企画もここに含まれます。
+        </p>
+      </article>
+    </div>
+
+    <p class="project__note reveal">
+      今年はエントリー制（応募制）を導入し、審査会を経て採択された企画が並びます。
+      内容や運営体制がしっかりと準備された企画を、最高の形で来場者に届けるためです。
+      <span class="tag tag--tbd">採択企画は決定後に公開します</span>
+    </p>
+
+    <!-- ▼ 掲載可否を実行委員会で確認してください（昨年の企画者への配慮が必要な場合は削除） -->
+    <div class="past reveal">
+      <h3 class="past__title">昨年の企画から</h3>
+      <p class="past__desc">どんな企画が並ぶのか。前回の文化祭で実施された企画の一部を紹介します。</p>
+      <ul class="past__list">
+        <li><strong>カレッジ生の見えないところ</strong><span>カレッジ生が抱える「負の感情」の展示</span></li>
+        <li><strong>絵の展示</strong><span>絵画と香りを同時に体験する展示</span></li>
+        <li><strong>刺繍日記＠SHIMOKITA COLLEGE</strong><span>日々の感情や記憶を綴った刺繍日記の展示</span></li>
+        <li><strong>Letter Port 〜想いの港〜</strong><span>ドリンクを飲みながら手紙を書ける企画</span></li>
+        <li><strong>いしょ</strong><span>“死”を通して“生”を見つめ直す遺書体験展示</span></li>
+        <li><strong>Experience Rwanda</strong><span>ポストカードやアフリカ布クラフトの展示・販売</span></li>
+        <li><strong>船員たちの本棚</strong><span>おすすめ本を紹介コメント付きで展示・販売</span></li>
+        <li><strong>波乗り3分クッキング</strong><span>調理体験と試食の企画</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTENTS ============ -->
+<section class="section section--contents" id="contents">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">CONTENTS</p>
+      <h2 class="section__title">当日のコンテンツ</h2>
+      <p class="section__desc">
+        現在、カレッジ生から集まった企画の審査・準備を進めています。
+        内容は決まり次第このページで公開します。
+      </p>
+    </header>
+
+    <div class="cards">
+      <article class="card reveal" style="--card-accent: var(--c-pink)">
+        <span class="card__icon" aria-hidden="true">🎤</span>
+        <h3>ステージ企画</h3>
+        <p>1階のステージで、ゲストを招いたトークセッションを中心に全8企画を予定。カレッジ生による企画枠もあります。</p>
+        <p class="card__meta"><span class="tag tag--tbd">出演者 調整中</span></p>
+      </article>
+
+      <article class="card reveal" style="--card-accent: var(--c-orange)">
+        <span class="card__icon" aria-hidden="true">🍳</span>
+        <h3>飲食企画</h3>
+        <p>カレッジ生による飲食出店と、寮の食堂「リラ食」。あたたかい飲みものも用意します。</p>
+        <p class="card__meta"><span class="tag">回数券でお支払い</span></p>
+      </article>
+
+      <article class="card reveal" style="--card-accent: var(--c-blue)">
+        <span class="card__icon" aria-hidden="true">💡</span>
+        <h3>マイプロ / アワプロ</h3>
+        <p>ひとりの「やりたい」から始まる企画と、複数人でつくる企画。展示・体験企画として各フロアに並びます。</p>
+        <p class="card__meta"><a href="#project">くわしく →</a></p>
+      </article>
+
+      <article class="card reveal" style="--card-accent: var(--c-green)">
+        <span class="card__icon" aria-hidden="true">🔍</span>
+        <h3>謎解き</h3>
+        <p>建物まるごとを使った回遊型の謎解き企画。1階に受付を設けます。</p>
+        <p class="card__meta"><span class="tag tag--tbd">内容 検討中</span></p>
+      </article>
+
+      <article class="card reveal" style="--card-accent: var(--c-purple)">
+        <span class="card__icon" aria-hidden="true">🎨</span>
+        <h3>アート展示・空間演出</h3>
+        <p>カレッジ生が一体となってつくる文化祭アート。「カレッジとはどんな空間なのか」を体験できる空間を設計します。</p>
+        <p class="card__meta"><span class="tag tag--tbd">制作中</span></p>
+      </article>
+
+      <article class="card reveal" style="--card-accent: var(--c-yellow)">
+        <span class="card__icon" aria-hidden="true">🧺</span>
+        <h3>物販</h3>
+        <p>キービジュアルを使ったTシャツ・缶バッジ・ステッカーなどのオリジナルグッズを予定しています。</p>
+        <p class="card__meta"><span class="tag tag--tbd">ラインナップ 検討中</span></p>
+      </article>
+
+      <article class="card reveal" style="--card-accent: var(--c-blue)">
+        <span class="card__icon" aria-hidden="true">🏠</span>
+        <h3>カレッジ展示</h3>
+        <p>SHIMOKITA COLLEGE での「暮らしながら学ぶ」日常そのものを紹介する展示です。</p>
+        <p class="card__meta"><span class="tag tag--tbd">準備中</span></p>
+      </article>
+
+      <article class="card card--inner reveal" style="--card-accent: var(--c-pink)">
+        <span class="card__icon" aria-hidden="true">🎆</span>
+        <h3>前夜祭 / 後夜祭</h3>
+        <p>カレッジ生・関係者向けのプログラムです。準備の熱をそのまま持ち込む前夜祭と、2日間を分かち合う後夜祭。</p>
+        <p class="card__meta"><span class="tag tag--inner">カレッジ生向け</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FLOOR ============ -->
+<section class="section section--floor" id="floor">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">FLOOR GUIDE</p>
+      <h2 class="section__title">フロアガイド</h2>
+      <p class="section__desc">
+        1階から5階まで、建物まるごとが会場です。
+        <span class="tag tag--tbd">フロア割りは検討中のため変更の可能性があります</span>
+      </p>
+    </header>
+
+    <div class="building reveal">
+      <!-- 上から5F → 1F の順に積んでいます -->
+      <div class="floor" style="--floor-accent: var(--c-purple)">
+        <div class="floor__no"><span>5</span>F</div>
+        <div class="floor__body">
+          <h3>マイプロジェクト展示</h3>
+          <p>ひとりの探究がかたちになった場所。</p>
+        </div>
+      </div>
+
+      <div class="floor" style="--floor-accent: var(--c-blue)">
+        <div class="floor__no"><span>4</span>F</div>
+        <div class="floor__body">
+          <h3>アワプロジェクト展示</h3>
+          <p>複数人でつくった企画の発表・体験スペース。</p>
+        </div>
+      </div>
+
+      <div class="floor" style="--floor-accent: var(--c-green)">
+        <div class="floor__no"><span>3</span>F</div>
+        <div class="floor__body">
+          <h3>アワプロジェクト展示 / 委員会企画</h3>
+          <p>図書委員会などカレッジ内の委員会による企画も予定。</p>
+        </div>
+      </div>
+
+      <div class="floor" style="--floor-accent: var(--c-orange)">
+        <div class="floor__no"><span>2</span>F</div>
+        <div class="floor__body">
+          <h3>飲食 / カレッジ展示 / アワプロジェクト</h3>
+          <p>食べて、休んで、カレッジの日常をのぞく階。</p>
+        </div>
+      </div>
+
+      <div class="floor" style="--floor-accent: var(--c-pink)">
+        <div class="floor__no"><span>1</span>F</div>
+        <div class="floor__body">
+          <h3>ステージ / リラ食 / 謎解き受付 / 物販</h3>
+          <p>入口はここから。文化祭のいちばん賑やかな階。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section class="section section--schedule" id="schedule">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">SCHEDULE</p>
+      <h2 class="section__title">日程</h2>
+      <p class="section__desc">
+        一般公開は11月14日(土)・15日(日)の2日間。その前の一週間は、日常から本祭へと熱量を上げていく
+        <strong>Festival Week</strong> として設計しています。
+      </p>
+    </header>
+
+    <ol class="timeline">
+      <li class="timeline__item reveal">
+        <div class="timeline__date"><span class="timeline__month">11</span><span class="timeline__day">9</span><span class="timeline__dow">MON〜</span></div>
+        <div class="timeline__body">
+          <h3>Festival Week <span class="tag tag--tbd">内容 調整中</span></h3>
+          <p>11月9日(月)から13日(金)まで。本祭の2日間だけでなく、準備の時間も含めて文化祭として味わうための一週間です。</p>
+          <p class="timeline__note">18:00 – 21:00 を予定</p>
+        </div>
+      </li>
+
+      <li class="timeline__item reveal">
+        <div class="timeline__date"><span class="timeline__month">11</span><span class="timeline__day">13</span><span class="timeline__dow">FRI</span></div>
+        <div class="timeline__body">
+          <h3>前夜祭 <span class="tag tag--inner">カレッジ生向け</span></h3>
+          <p>設営を終えたその足で、みんなで明日を迎えにいく時間。</p>
+        </div>
+      </li>
+
+      <li class="timeline__item timeline__item--main reveal">
+        <div class="timeline__date"><span class="timeline__month">11</span><span class="timeline__day">14</span><span class="timeline__dow">SAT</span></div>
+        <div class="timeline__body">
+          <h3>カレッジ文化祭 DAY 1 <span class="tag">一般公開</span></h3>
+          <p>11:00 – 18:00 を予定。ステージ・飲食・展示・謎解きなど、全フロアでプログラムが動きます。</p>
+          <p class="timeline__note"><span class="tag tag--tbd">タイムテーブルは決定後に公開</span></p>
+        </div>
+      </li>
+
+      <li class="timeline__item timeline__item--main reveal">
+        <div class="timeline__date"><span class="timeline__month">11</span><span class="timeline__day">15</span><span class="timeline__dow">SUN</span></div>
+        <div class="timeline__body">
+          <h3>カレッジ文化祭 DAY 2 <span class="tag">一般公開</span></h3>
+          <p>2日目。夜はカレッジ生による後夜祭で、2日間を締めくくります。</p>
+          <p class="timeline__note"><span class="tag tag--tbd">開催時間 調整中</span></p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ COLLEGE ============ -->
+<section class="section section--college" id="college">
+  <div class="container">
+    <div class="college">
+      <div class="college__text reveal">
+        <p class="section__label">VENUE</p>
+        <h2 class="section__title">SHIMOKITA COLLEGE とは</h2>
+        <p>
+          SHIMOKITA COLLEGE は、多様性豊かな高校生・大学生・若手社会人が寝食を共にする中で互いに学び合い、新たな教育的価値をもたらす学生寮です。2020年12月開業。
+        </p>
+        <p>
+          地上5階建て・全102室の館内には、食堂付きの大きなラウンジ空間や、個々の学習をサポートするライブラリー、暖炉を囲む語らいの場や屋上菜園など、多様な共用設備があり、「暮らしながら学ぶ」環境が用意されています。現在、約120名の高校生・大学生・若手社会人が互いの経験を持ち寄って刺激的な毎日を送っています。
+        </p>
+        <!-- ▼ 公式サイトURLを確認のうえリンクしてください -->
+        <p class="college__link">
+          <a href="https://shimokita.college/" target="_blank" rel="noopener">SHIMOKITA COLLEGE 公式サイト <span aria-hidden="true">↗</span></a>
+        </p>
+      </div>
+
+      <div class="college__visual reveal" aria-hidden="true">
+        <div class="college__building">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACCESS ============ -->
+<section class="section section--access" id="access">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">ACCESS</p>
+      <h2 class="section__title">アクセス・来場案内</h2>
+    </header>
+
+    <div class="access reveal">
+      <dl class="access__info">
+        <div>
+          <dt>会場</dt>
+          <dd>SHIMOKITA COLLEGE</dd>
+        </div>
+        <div>
+          <dt>住所</dt>
+          <!-- ▼ 要確認：正式表記を公式サイトで照合してから確定してください -->
+          <dd>東京都世田谷区代田6-6-1 <span class="tag tag--tbd">表記 確認中</span></dd>
+        </div>
+        <div>
+          <dt>最寄駅</dt>
+          <dd>
+            小田急線「世田谷代田」駅 すぐ<br>
+            小田急線・京王井の頭線「下北沢」駅より徒歩圏
+            <span class="tag tag--tbd">所要時間 確認中</span>
+          </dd>
+        </div>
+        <div>
+          <dt>入場</dt>
+          <dd>入場無料。事前予約の要否は調整中です。</dd>
+        </div>
+        <div>
+          <dt>お願い</dt>
+          <dd>
+            住宅街に立地しています。近隣のみなさまのご迷惑にならないよう、会場周辺ではお静かにお願いします。<br>
+            お車・自転車でのご来場はご遠慮ください。
+            <span class="tag tag--tbd">駐輪の可否 確認中</span>
+          </dd>
+        </div>
+        <div>
+          <dt>撮影</dt>
+          <!-- ▼ 撮影・肖像権ポリシー確定後に差し替えてください（広報局＋事務局） -->
+          <dd>会場内で記録用の写真・動画撮影を行います。詳細は決まり次第お知らせします。</dd>
+        </div>
+        <div>
+          <dt>バリアフリー</dt>
+          <!-- ▼ アクセシビリティ案内（段差・エレベーター・休憩場所等）確定後に差し替えてください -->
+          <dd>館内の設備・導線については、来場案内とあわせてご案内します。<span class="tag tag--tbd">準備中</span></dd>
+        </div>
+      </dl>
+
+      <!-- ▼ 地図：住所確定後に Google マップの埋め込みコードに差し替えてください -->
+      <div class="access__map">
+        <div class="access__map-placeholder">
+          <span aria-hidden="true">🗺️</span>
+          <p>地図は準備中です</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SUPPORT ============ -->
+<section class="section section--support" id="support">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">SUPPORT</p>
+      <h2 class="section__title">協賛・応援について</h2>
+      <p class="section__desc">
+        カレッジ文化祭は、企業・地域のみなさまのご支援とクラウドファンディングに支えられて開催されます。
+      </p>
+    </header>
+
+    <div class="support">
+      <article class="support__card reveal">
+        <h3>企業協賛</h3>
+        <p>協賛プランをご用意しています。ご関心をお持ちいただけましたら、お問い合わせよりご連絡ください。</p>
+        <!-- ▼ 協賛資料のリンク or 問い合わせフォームURLを設定してください -->
+        <p><a class="btn btn--ghost" href="#contact">お問い合わせ</a></p>
+      </article>
+
+      <article class="support__card reveal">
+        <h3>クラウドファンディング</h3>
+        <p>卒業生・個人のみなさまからのご支援を募ります。支援プランと返礼品もあわせてご案内予定です。</p>
+        <p><span class="tag tag--tbd">10月中旬 公開予定</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--faq" id="faq">
+  <div class="container container--narrow">
+    <header class="section__head reveal">
+      <p class="section__label">FAQ</p>
+      <h2 class="section__title">よくある質問</h2>
+    </header>
+
+    <div class="faq reveal">
+      <details class="faq__item">
+        <summary>どなたでも参加できますか？</summary>
+        <div class="faq__body">
+          <p>はい。カレッジに関わりのある方はもちろん、これまで SHIMOKITA COLLEGE をご存じなかった方にもぜひ来ていただきたいと考えています。</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>入場料はかかりますか？予約は必要ですか？</summary>
+        <div class="faq__body">
+          <p>入場は<strong>無料</strong>の予定です。事前予約の要否は現在調整中で、決まり次第このページでお知らせします。</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>飲食や物販の支払い方法は？</summary>
+        <div class="faq__body">
+          <p>各企画で個別にお支払いいただくのではなく、<strong>受付で回数券をご購入いただく方式</strong>を予定しています。現金のほか PayPay などのキャッシュレス決済にも対応する方向で調整中です。販売場所・金額は決まり次第お知らせします。</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>Festival Week とは何ですか？</summary>
+        <div class="faq__body">
+          <p>本祭の直前、11月9日(月)から13日(金)までの一週間のことです。「ハレの日」である2日間だけでなく、そこに至るまでのカレッジの日常や準備の風景も含めて文化祭として味わってもらえたら、という考えから設計しています。一般の方向けのプログラムがあるかどうかを含め、内容は現在検討中です。</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>タイムテーブルはいつ公開されますか？</summary>
+        <div class="faq__body">
+          <p>企画の審査・調整が完了したのち、本サイトで公開します。最新情報は公式SNSでもお知らせします。</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>雨天の場合は開催されますか？</summary>
+        <div class="faq__body">
+          <p>屋内が中心のため、雨天でも開催します。屋外企画については一部内容を変更する場合があります。</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>子ども連れでも楽しめますか？</summary>
+        <div class="faq__body">
+          <p>お子さま連れでも楽しんでいただける企画を予定しています。詳しい対象年齢や注意事項は、企画一覧の公開時にあわせてご案内します。</p>
+        </div>
+      </details>
+
+      <details class="faq__item">
+        <summary>カレッジ生です。企画への応募方法は？</summary>
+        <div class="faq__body">
+          <!-- ▼ 応募フォーム/募集要項のリンクを設定してください（事務局リンク集にあり） -->
+          <p>マイプロ・アワプロの募集要項と応募フォームは、カレッジ内の事務局リンク集および Slack で案内しています。相談窓口は企画局です。</p>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="cta__inner reveal">
+      <h2>最新情報をお届けします</h2>
+      <p>企画の詳細・タイムテーブル・来場案内は、決まり次第このサイトと公式SNSで公開します。</p>
+      <!-- ▼ SNSアカウントが用意でき次第、href を差し替えて aria-disabled を外してください -->
+      <div class="cta__links">
+        <a class="btn btn--primary" href="#" aria-disabled="true">Instagram <span aria-hidden="true">↗</span></a>
+        <a class="btn btn--ghost" href="#" aria-disabled="true">note <span aria-hidden="true">↗</span></a>
+        <a class="btn btn--ghost" href="mailto:example@example.com">お問い合わせ</a>
+      </div>
+      <p class="cta__note">※ リンクは準備中です。</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ フッター ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <p class="site-footer__logo">まぜまぜ<span>。</span></p>
+        <p class="site-footer__tagline">
+          第6回カレッジ文化祭<br>
+          2026.11.14 SAT – 11.15 SUN<br>
+          SHIMOKITA COLLEGE
+        </p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="フッターメニュー">
+        <ul>
+          <li><a href="#about">文化祭について</a></li>
+          <li><a href="#project">マイプロ・アワプロ</a></li>
+          <li><a href="#contents">コンテンツ</a></li>
+          <li><a href="#floor">フロアガイド</a></li>
+          <li><a href="#schedule">日程</a></li>
+          <li><a href="#access">アクセス</a></li>
+          <li><a href="#support">協賛・応援</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <p class="site-footer__copy">
+      <small>&copy; 2026 カレッジ文化祭実行委員会 / SHIMOKITA COLLEGE</small>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
