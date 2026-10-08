@@ -8,10 +8,11 @@
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@700;900&family=Zen+Old+Mincho:wght@500;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
-    --grad: linear-gradient(100deg, #ff5d8f, #ff9245 28%, #ffc93c 46%, #3fc79a 66%, #3d9df5 84%, #8b6cf0);
+    /* キービジュアル由来の配色（assets/css/style.css と揃えています） */
+    --grad: linear-gradient(100deg, #9e2a10, #f4492f 34%, #f59b3f 70%, #f8c070);
   }
   * { box-sizing: border-box; }
   body {
@@ -23,15 +24,16 @@
     gap: 8px;
     padding: 40px 24px;
     text-align: center;
-    background: #fbf8f4;
-    color: #1c1a2b;
-    font-family: "Zen Kaku Gothic New", "Hiragino Sans", sans-serif;
+    background: #fdf8f1;
+    color: #1a120c;
+    font-family: "FOT-TsukuAOldMin Pr6N", "Tsukushi A Old Mincho", "Zen Old Mincho", "Hiragino Mincho ProN", serif;
     font-weight: 500;
     line-height: 1.9;
   }
+  .kv { width: min(42vw, 190px); margin-bottom: 8px; }
   .code {
     font-family: "Outfit", sans-serif;
-    font-size: clamp(5rem, 22vw, 11rem);
+    font-size: clamp(4rem, 18vw, 8.5rem);
     font-weight: 900;
     line-height: 1;
     background: var(--grad);
@@ -39,24 +41,25 @@
     background-clip: text;
     color: transparent;
   }
-  h1 { font-size: clamp(1.1rem, 4vw, 1.5rem); font-weight: 900; margin: 16px 0 4px; }
-  p { color: #55516d; font-size: .9rem; margin: 0; }
+  h1 { font-size: clamp(1.1rem, 4vw, 1.5rem); font-weight: 900; margin: 12px 0 4px; }
+  p { color: #5f4c42; font-size: .9rem; margin: 0; }
   a.home {
     display: inline-block;
     margin-top: 28px;
     padding: 13px 30px;
     border-radius: 999px;
-    background: #1c1a2b;
+    background: #f4492f;
     color: #fff;
     font-weight: 700;
     font-size: .88rem;
     text-decoration: none;
     transition: background .2s;
   }
-  a.home:hover { background: #8b6cf0; }
+  a.home:hover { background: #9e2a10; }
 </style>
 </head>
 <body>
+  <img class="kv" src="/assets/img/keyvisual-transparent.png" alt="" aria-hidden="true">
   <p class="code">404</p>
   <h1>ページが見つかりません</h1>
   <p>URL が変更されたか、削除された可能性があります。</p>
