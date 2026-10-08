@@ -162,10 +162,14 @@ PY
 
 ### 背景の紙について
 
-ページ全体の背景は `background.webp`（方眼紙のテクスチャ）です。
-`body::before` に `position: fixed` のレイヤーとして敷いています。
-`background-attachment: fixed` を使っていないのは、iOS Safari でその指定が
-正しく拡大されない不具合があるためです。
+`background.webp`（方眼紙のテクスチャ）は、**トップ画面＝ヒーロー（`.hero`）だけ**に敷いています。
+その下のセクションは地色（`--paper`）のみで、テクスチャは出ません。
+ヒーローの直下にティッカーの黒帯が入るため、切り替わりは目立ちません。
+
+全ページに敷きたくなった場合は、`.hero` の `background` を `body` へ移してください。
+その際 `background-attachment: fixed` は使わず、`position: fixed` のレイヤー
+（`body::before` など）にしてください。iOS Safari で `fixed` 背景が正しく拡大されない
+不具合があるためです。
 
 原本の `background.png` は 5.1MB あり、そのまま配信すると重すぎるため、
 WebP に圧縮した `background.webp`（約340KB）を使っています。差し替え時は作り直してください。

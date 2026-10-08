@@ -68,21 +68,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* 背景の紙（assets/img/background.webp）。
-   position:fixed のレイヤーにしているのは、background-attachment:fixed が
-   iOS Safari で正しく拡大されない不具合を避けるため。 */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(var(--veil), var(--veil)),
-    url("../img/background.webp") center center / cover no-repeat,
-    var(--paper);
-}
-
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
 h1, h2, h3, h4 { line-height: 1.35; letter-spacing: .01em; margin: 0; }
@@ -209,7 +194,12 @@ li { list-style: none; }
   align-items: center;
   padding: calc(var(--header-h) + 56px) 0 96px;
   overflow: hidden;
-  background: transparent;   /* 背景の紙をそのまま見せる */
+  /* 背景の紙（assets/img/background.webp）はトップ画面＝ヒーローだけに敷く。
+     --veil は上にかける白いベール。濃くすると本文が読みやすく、薄くすると紙が強く出る。 */
+  background:
+    linear-gradient(var(--veil), var(--veil)),
+    url("../img/background.webp") center center / cover no-repeat,
+    var(--paper);
 }
 
 .hero__inner {
@@ -1080,6 +1070,6 @@ li { list-style: none; }
 @media print {
   .site-header, .hero__scroll, .ticker, .cta { display: none !important; }
   body { background: #fff; color: #000; }
-  body::before { display: none; }
+  .hero { background: #fff !important; }
   .reveal { opacity: 1; transform: none; }
 }
