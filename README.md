@@ -31,6 +31,8 @@ git status          # コミット前に必ず確認
 │   └── img/
 │       ├── keyvisual.png             … キービジュアル原本（白背景）
 │       ├── keyvisual-transparent.png … 白背景を抜いた版（サイトで使用）
+│       ├── background.png            … 背景の紙 原本（5.1MB）
+│       ├── background.webp           … 配信用に圧縮した版（サイトで使用）
 │       ├── ogp.png                   … SNSシェア用 1200×630
 │       └── favicon.svg               … ファビコン
 └── README.md
@@ -157,6 +159,31 @@ PY
 ```
 
 `ogp.png`（1200×630）もキービジュアルから生成しています。差し替え時は作り直してください。
+
+### 背景の紙について
+
+ページ全体の背景は `background.webp`（方眼紙のテクスチャ）です。
+`body::before` に `position: fixed` のレイヤーとして敷いています。
+`background-attachment: fixed` を使っていないのは、iOS Safari でその指定が
+正しく拡大されない不具合があるためです。
+
+原本の `background.png` は 5.1MB あり、そのまま配信すると重すぎるため、
+WebP に圧縮した `background.webp`（約340KB）を使っています。差し替え時は作り直してください。
+
+```sh
+python3 -c "
+from PIL import Image
+Image.open('assets/img/background.png').convert('RGB').save(
+    'assets/img/background.webp', 'WEBP', quality=72, method=6)
+"
+```
+
+背景が強すぎる／弱すぎると感じたら、`style.css` の `--veil` を調整してください。
+数値を上げるほど白いベールが濃くなり、本文が読みやすくなります。
+
+```css
+--veil: rgba(255, 255, 255, .62);
+```
 
 ### カウントダウンの基準日
 
