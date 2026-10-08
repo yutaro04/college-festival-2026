@@ -24,11 +24,17 @@ git status          # コミット前に必ず確認
 ├── index.html          … サイト本体（文言はすべてここ）
 ├── 404.html            … 存在しないURLに来たとき用
 ├── .nojekyll           … GitHub Pages の Jekyll 処理を無効化
+├── CNAME               … 独自ドメイン設定（GitHub が管理）
 ├── assets/
 │   ├── css/style.css   … デザイン（色は先頭の :root でまとめて変更可）
 │   ├── js/main.js      … メニュー・スクロール演出・カウントダウン
 │   └── img/
-│       └── favicon.svg … ファビコン
+│       ├── keyvisual.png             … キービジュアル原本（白背景）
+│       ├── keyvisual-transparent.png … 白背景を抜いた版（サイトで使用）
+│       ├── background.png            … 背景の紙 原本（5.1MB）
+│       ├── background.webp           … 配信用に圧縮した版（サイトで使用）
+│       ├── ogp.png                   … SNSシェア用 1200×630
+│       └── favicon.svg               … ファビコン
 └── README.md
 ```
 
@@ -66,17 +72,10 @@ python3 -m http.server 8000
 > 独自ドメインを使う場合は Pages の設定画面で Custom domain を設定してください
 > （`CNAME` ファイルが自動生成されます）。
 
-現在の公開URL: **https://yutaro04.github.io/college-festival-2026/**
+現在の公開URL: **https://shimokita-college-festival-2026.tokyo/**
 
-### OGP 画像について
-
-SNS でシェアしたときのサムネイルに使う `assets/img/ogp.png`（推奨 1200×630px）は未作成です。
-キービジュアル確定後にファイルを追加し、`index.html` の該当行を有効化してください。
-
-```html
-<meta name="twitter:card" content="summary_large_image">
-<meta property="og:image" content="https://yutaro04.github.io/college-festival-2026/assets/img/ogp.png">
-```
+独自ドメインはリポジトリ直下の `CNAME` で設定されています。ドメインを変更する場合は、
+`CNAME` と、`index.html` の `canonical` / `og:url` / `og:image` の4箇所を揃えて書き換えてください。
 
 ---
 
@@ -110,15 +109,84 @@ SNS でシェアしたときのサムネイルに使う `assets/img/ogp.png`（�
 ### 色を変える
 
 `assets/css/style.css` の冒頭 `:root` にすべての色が定義されています。
-キービジュアルが上がってきたら、ここの6色を合わせると全体のトーンが揃います。
+配色はキービジュアルから抽出した暖色系で統一しています。
 
 ```css
---c-pink:   #ff5d8f;
---c-orange: #ff9245;
---c-yellow: #ffc93c;
---c-green:  #3fc79a;
---c-blue:   #3d9df5;
---c-purple: #8b6cf0;
+--c-vermilion: #f4492f;  /* 主役の朱 */
+--c-flame:     #d2360f;  /* 濃い朱 */
+--c-ember:     #9e2a10;  /* いちばん深い赤 */
+--c-amber:     #f59b3f;  /* 渦の橙 */
+--c-gold:      #f8c070;  /* 明るい金 */
+--ink:         #1a120c;  /* 破片の中の黒い粒 */
+--paper:       #fdf8f1;
+```
+
+カードやフロアごとのアクセント色は `index.html` 側の
+`style="--card-accent: var(--c-amber)"` / `--floor-accent` で個別に指定しています。
+
+### フォントについて
+
+本文は**オールド明朝**です。指定の「FOT-筑紫Aオールド明朝 Pr6N」は Fontworks の商用フォントで
+Web フォント配信がないため、そのままでは**サイト訪問者の環境では表示できません**。
+そこでフォントスタックを次のようにしています。
+
+1. `FOT-TsukuAOldMin Pr6N` ほか筑紫Aオールド明朝の各名称 … ライセンスを持つ端末では本物が出ます
+2. `Zen Old Mincho`（Google Fonts）… 同じオールド明朝系の代替。実質こちらが表示されます
+3. `Hiragino Mincho ProN` / `Yu Mincho` / `serif` … 最終フォールバック
+
+もし筑紫Aオールド明朝を本当に全訪問者へ配信したい場合は、Fontworks の
+**LETS Web フォント**などの Web フォント契約が別途必要です。契約後は `@font-face`
+もしくは提供される CSS を読み込み、`--font-ja` の先頭に配信名を置いてください。
+
+欧文・数字は対比のため `Outfit`（Google Fonts）のままにしています。
+
+### キービジュアルの画像について
+
+`keyvisual.png` は白背景なので、そのままだと紙色や濃色の上で白い四角が出ます。
+サイトでは白を抜いた `keyvisual-transparent.png` を使っています。
+キービジュアルを差し替えるときは、透過版も作り直してください。
+
+```sh
+python3 - <<'PY'
+from PIL import Image
+import numpy as np
+a = np.asarray(Image.open('assets/img/keyvisual.png').convert('RGB')).astype(np.int16)
+mx, mn = a.max(axis=2), a.min(axis=2)
+alpha = np.clip(np.maximum((mx - mn) * 3, (255 - mx) * 4), 0, 255).astype(np.uint8)
+Image.fromarray(np.dstack([a.astype(np.uint8), alpha]), 'RGBA') \
+     .save('assets/img/keyvisual-transparent.png')
+PY
+```
+
+`ogp.png`（1200×630）もキービジュアルから生成しています。差し替え時は作り直してください。
+
+### 背景の紙について
+
+`background.webp`（方眼紙のテクスチャ）は、**トップ画面＝ヒーロー（`.hero`）だけ**に敷いています。
+その下のセクションは地色（`--paper`）のみで、テクスチャは出ません。
+ヒーローの直下にティッカーの黒帯が入るため、切り替わりは目立ちません。
+
+全ページに敷きたくなった場合は、`.hero` の `background` を `body` へ移してください。
+その際 `background-attachment: fixed` は使わず、`position: fixed` のレイヤー
+（`body::before` など）にしてください。iOS Safari で `fixed` 背景が正しく拡大されない
+不具合があるためです。
+
+原本の `background.png` は 5.1MB あり、そのまま配信すると重すぎるため、
+WebP に圧縮した `background.webp`（約340KB）を使っています。差し替え時は作り直してください。
+
+```sh
+python3 -c "
+from PIL import Image
+Image.open('assets/img/background.png').convert('RGB').save(
+    'assets/img/background.webp', 'WEBP', quality=72, method=6)
+"
+```
+
+背景が強すぎる／弱すぎると感じたら、`style.css` の `--veil` を調整してください。
+数値を上げるほど白いベールが濃くなり、本文が読みやすくなります。
+
+```css
+--veil: rgba(255, 255, 255, .62);
 ```
 
 ### カウントダウンの基準日
