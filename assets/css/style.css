@@ -354,9 +354,9 @@ li { list-style: none; }
 /* 背景の紙を活かすため、セクションは原則すべて透明。
    1つおきに薄い白をかけて区切りのリズムだけ残している。 */
 .section { padding: var(--section-pad) 0; position: relative; background: transparent; }
-.section--project  { background: rgba(255, 255, 255, .4); }
-.section--floor    { background: rgba(255, 255, 255, .4); }
-.section--support  { background: rgba(255, 255, 255, .4); }
+.section--project   { background: rgba(255, 255, 255, .4); }
+.section--exhibitors{ background: rgba(255, 255, 255, .4); }
+.section--support   { background: rgba(255, 255, 255, .4); }
 .section--college  { background: var(--ink); color: var(--paper); }
 
 .section__head { margin-bottom: clamp(40px, 6vw, 64px); max-width: 720px; }
@@ -570,6 +570,15 @@ li { list-style: none; }
   color: var(--ink-soft);
 }
 .project__note .tag { margin-left: 4px; }
+.project__note a {
+  display: inline-block;
+  margin-left: 4px;
+  font-weight: 700;
+  color: var(--c-flame);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.project__note a:hover { text-decoration: underline; }
 
 /* 昨年の企画 */
 .past { margin-top: clamp(44px, 7vw, 72px); }
@@ -636,6 +645,60 @@ li { list-style: none; }
 }
 .card__meta a:hover { text-decoration: underline; }
 .card--inner { background: linear-gradient(180deg, var(--panel), rgba(223, 235, 237, .9)); }
+
+/* ---------- 出展企画 ---------- */
+.exhibits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+.exhibit {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: transform .3s cubic-bezier(.2,.8,.3,1), box-shadow .3s, border-color .3s;
+}
+.exhibit:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: transparent; }
+
+.exhibit__visual {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--paper-alt);
+  border-bottom: 3px solid var(--c-vermilion);
+}
+.exhibit__visual img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .5s cubic-bezier(.2,.8,.3,1);
+}
+.exhibit:hover .exhibit__visual img { transform: scale(1.04); }
+
+.exhibit__body { padding: 24px 26px 28px; }
+.exhibit__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.exhibit__title {
+  font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+  font-weight: 900;
+  line-height: 1.5;
+  margin-bottom: .6em;
+}
+.exhibit__body p:not(.exhibit__tags) {
+  font-size: .88rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.exhibits__note {
+  margin: 28px 0 0;
+  font-size: .85rem;
+  color: var(--ink-soft);
+}
+.exhibits__note .tag { margin-left: 4px; }
+
+/* 企画が1件だけのときに横長になりすぎないよう上限を設ける */
+.exhibits:has(.exhibit:only-child) { grid-template-columns: minmax(0, 480px); }
 
 /* ---------- floor ---------- */
 .building {

@@ -83,6 +83,55 @@ python3 -m http.server 8000
 
 文言はすべて `index.html` に直接書かれています。該当箇所を書き換えて push すれば反映されます。
 
+### 出展企画を追加する
+
+`index.html` の「出展企画」セクション（`id="exhibitors"`）にある
+`<article class="exhibit">…</article>` をまるごと複製し、中身を差し替えてください。
+記載するのは **企画名・紹介文・画像** の3つだけです。
+作成者名や連絡先は、出展者から掲載希望があった場合のみ追加してください。
+
+```html
+<article class="exhibit reveal">
+  <div class="exhibit__visual">
+    <img src="assets/img/＜ファイル名＞.webp"
+         alt="＜画像の内容を説明する文＞"
+         width="1536" height="1024" loading="lazy" decoding="async">
+  </div>
+  <div class="exhibit__body">
+    <p class="exhibit__tags">
+      <span class="tag">飲食</span>
+      <span class="tag tag--inner">ハウス企画</span>
+    </p>
+    <h3 class="exhibit__title">＜企画名＞</h3>
+    <p>＜紹介文＞</p>
+  </div>
+</article>
+```
+
+画像は **3:2（例 1536×1024）** が綺麗に収まります。それ以外の比率でも中央を基準に切り抜かれます。
+
+`alt` には画像に何が写っているかを書いてください。画像の中の文字は読み上げソフトや
+検索エンジンには伝わらないため、企画名と紹介文は必ず HTML 側にも書きます。
+
+提出された画像が重い場合（1MB 超が目安）は、WebP に圧縮したものを `src` に指定し、
+原本も `assets/img/` に残しておいてください。
+
+```sh
+python3 -c "
+from PIL import Image
+Image.open('assets/img/housee.png').convert('RGB').save(
+    'assets/img/housee.webp', 'WEBP', quality=82, method=6)
+"
+```
+
+`tag` の使い分けは次のとおりです。
+
+| 書き方 | 見え方 | 用途 |
+| --- | --- | --- |
+| `<span class="tag">飲食</span>` | 朱 | 企画のジャンル |
+| `<span class="tag tag--inner">ハウス企画</span>` | 灰 | 企画の区分 |
+| `<span class="tag tag--tbd">調整中</span>` | 黄 | 未確定の情報 |
+
 ### 「準備中」バッジの外し方
 
 情報が確定していない箇所には黄色いバッジが付いています。
