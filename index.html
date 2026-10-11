@@ -44,6 +44,7 @@
     <nav class="nav" id="nav" aria-label="メインメニュー">
       <ul class="nav__list">
         <li><a href="#about">文化祭について</a></li>
+        <li><a href="#exhibitors">出展企画</a></li>
         <li><a href="#project">マイプロ・アワプロ</a></li>
         <li><a href="#contents">コンテンツ</a></li>
         <li><a href="#floor">フロア</a></li>
@@ -191,6 +192,52 @@
   </div>
 </section>
 
+<!-- ============ 出展企画 ============
+     企画を追加するときは <article class="exhibit"> … </article> をまるごと複製して、
+     画像・タイトル・説明文・タグを差し替えてください。
+     画像は assets/img/ に置き、軽量化した .webp を src に指定します（手順は README 参照）。
+     ========================================================= -->
+<section class="section section--exhibitors" id="exhibitors">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">PROGRAM</p>
+      <h2 class="section__title">出展企画</h2>
+      <p class="section__desc">
+        審査を経て採択された企画をご紹介します。企画は決まり次第このページに追加していきます。
+      </p>
+    </header>
+
+    <div class="exhibits">
+
+      <article class="exhibit reveal">
+        <div class="exhibit__visual">
+          <img src="assets/img/housee.webp"
+               alt="ハウスEの、美味しEEEEEベビーカステラ。山盛りのベビーカステラにチョコソースがかかっている。"
+               width="1536" height="1024" loading="lazy" decoding="async">
+        </div>
+        <div class="exhibit__body">
+          <p class="exhibit__tags">
+            <span class="tag">飲食</span>
+            <span class="tag tag--inner">ハウス企画</span>
+          </p>
+          <h3 class="exhibit__title">ハウスEの、美味しEEEEEベビーカステラ</h3>
+          <p>
+            ふわふわ焼き立てのベビーカステラにとろ〜りチョコソース！
+            ハウスEの絶品ベビーカステラが登場！
+            一口サイズで歩き食べにもピッタリ！ハウスEへ急げ〜！
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="exhibits__note reveal">
+      出展場所・販売価格・営業時間は決まり次第お知らせします。
+      <span class="tag tag--tbd">詳細 調整中</span>
+    </p>
+  </div>
+</section>
+
 <!-- ============ マイプロ・アワプロ ============ -->
 <section class="section section--project" id="project">
   <div class="container">
@@ -225,7 +272,7 @@
     <p class="project__note reveal">
       今年はエントリー制（応募制）を導入し、審査会を経て採択された企画が並びます。
       内容や運営体制がしっかりと準備された企画を、最高の形で来場者に届けるためです。
-      <span class="tag tag--tbd">採択企画は決定後に公開します</span>
+      <a href="#exhibitors">採択された企画は「出展企画」でご紹介しています</a>
     </p>
 
     <!-- ▼ 掲載可否を実行委員会で確認してください（昨年の企画者への配慮が必要な場合は削除） -->
@@ -581,6 +628,7 @@
       <nav class="site-footer__nav" aria-label="フッターメニュー">
         <ul>
           <li><a href="#about">文化祭について</a></li>
+          <li><a href="#exhibitors">出展企画</a></li>
           <li><a href="#project">マイプロ・アワプロ</a></li>
           <li><a href="#contents">コンテンツ</a></li>
           <li><a href="#floor">フロアガイド</a></li>
