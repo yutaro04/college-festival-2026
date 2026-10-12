@@ -678,7 +678,13 @@ li { list-style: none; }
 }
 .exhibit:hover .exhibit__visual img { transform: scale(1.04); }
 
-.exhibit__body { padding: 24px 26px 28px; }
+.exhibit__body {
+  padding: 24px 26px 28px;
+  /* 企画者欄をカード下端に揃えるため、本文側を伸縮させる */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 .exhibit__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
 .exhibit__title {
   font-size: clamp(1.05rem, 2.4vw, 1.25rem);
@@ -689,13 +695,14 @@ li { list-style: none; }
 .exhibit__body p:not(.exhibit__tags) {
   font-size: .88rem;
   color: var(--ink-soft);
-  margin: 0;
+  margin: 0 0 .9em;   /* 紹介文が複数段落になる企画があるため */
 }
+.exhibit__body p:not(.exhibit__tags):last-of-type { margin-bottom: 0; }
 
 /* 企画者・連絡先（掲載希望があった企画のみ） */
 .exhibit__by {
-  margin-top: 20px;
-  padding-top: 16px;
+  margin-top: auto;
+  padding-top: 18px;
   border-top: 1px solid var(--line);
   display: grid;
   gap: 6px;
