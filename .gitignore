@@ -10,3 +10,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# 未掲載の素材を git add -A で誤ってコミットしないための受け皿
+# 掲載が決まった画像は assets/img/ に置いてください
+assets/img/_inbox/
