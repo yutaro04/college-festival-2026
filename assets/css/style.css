@@ -650,7 +650,8 @@ li { list-style: none; }
 /* ---------- 出展企画 ---------- */
 .exhibits {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  /* auto-fit にしているのは、企画が2件のときに空の3列目ができるのを防ぐため */
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 24px;
 }
 .exhibit {
@@ -690,6 +691,34 @@ li { list-style: none; }
   color: var(--ink-soft);
   margin: 0;
 }
+
+/* 企画者・連絡先（掲載希望があった企画のみ） */
+.exhibit__by {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+  font-size: .8rem;
+}
+.exhibit__by > div {
+  display: grid;
+  grid-template-columns: 6.5em 1fr;
+  gap: 8px;
+  align-items: baseline;
+}
+.exhibit__by dt {
+  font-weight: 700;
+  color: var(--c-flame);
+  letter-spacing: .04em;
+}
+.exhibit__by dd { color: var(--ink-soft); overflow-wrap: anywhere; }
+.exhibit__by a {
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+}
+.exhibit__by a:hover { color: var(--c-flame); border-color: currentColor; }
 
 .exhibits__note {
   margin: 28px 0 0;
