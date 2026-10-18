@@ -678,6 +678,12 @@ li { list-style: none; }
 }
 .exhibit:hover .exhibit__visual img { transform: scale(1.04); }
 
+/* 画像がまだ届いていない企画。画像の代わりに上辺の朱線で体裁を揃える */
+.exhibit--text {
+  border-top: 3px solid var(--c-vermilion);
+}
+.exhibit--text .exhibit__body { padding-top: 30px; }
+
 .exhibit__body {
   padding: 24px 26px 28px;
   /* 企画者欄をカード下端に揃えるため、本文側を伸縮させる */

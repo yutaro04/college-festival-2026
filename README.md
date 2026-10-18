@@ -111,6 +111,21 @@ python3 -m http.server 8000
 画像は **3:2（例 1536×1024）** が綺麗に収まります。それ以外の比率でも中央を基準に切り抜かれます。
 正方形の画像を渡された場合は、上下が切り落とされても成立するか必ず目視で確認してください。
 
+#### 画像がまだ届いていない場合
+
+`<article>` に `exhibit--text` を足し、`<div class="exhibit__visual">…</div>` をまるごと省きます。
+画像の代わりにカード上辺へ朱色の線が入り、画像ありのカードと並べても違和感が出ません。
+
+```html
+<article class="exhibit exhibit--text reveal">
+  <div class="exhibit__body">
+    …
+  </div>
+</article>
+```
+
+あとから画像が届いたら、`exhibit--text` を外して `.exhibit__visual` を足すだけです。
+
 #### 企画者名・連絡先を載せる場合
 
 出展者から**掲載希望があった場合のみ**、紹介文のあとに次のブロックを足します。
@@ -127,6 +142,18 @@ python3 -m http.server 8000
     <dd><a href="mailto:＜メールアドレス＞">＜メールアドレス＞</a></dd>
   </div>
 </dl>
+```
+
+連絡先が SNS の場合は、行を足してリンクにします。複数アカウントは `<br>` で並べます。
+
+```html
+<div>
+  <dt>Instagram</dt>
+  <dd>
+    <a href="https://www.instagram.com/＜ID＞/" target="_blank" rel="noopener">@＜ID＞</a><br>
+    <a href="https://www.instagram.com/＜ID2＞/" target="_blank" rel="noopener">@＜ID2＞</a>
+  </dd>
+</div>
 ```
 
 公開サイトにメールアドレスを平文で載せると、収集ボットに拾われて迷惑メールが届くことがあります。
