@@ -129,6 +129,18 @@ python3 -m http.server 8000
 </dl>
 ```
 
+連絡先が SNS の場合は、行を足してリンクにします。複数アカウントは `<br>` で並べます。
+
+```html
+<div>
+  <dt>Instagram</dt>
+  <dd>
+    <a href="https://www.instagram.com/＜ID＞/" target="_blank" rel="noopener">@＜ID＞</a><br>
+    <a href="https://www.instagram.com/＜ID2＞/" target="_blank" rel="noopener">@＜ID2＞</a>
+  </dd>
+</div>
+```
+
 公開サイトにメールアドレスを平文で載せると、収集ボットに拾われて迷惑メールが届くことがあります。
 出展者にその点を伝えたうえで掲載し、本人から希望があればいつでも削除できるようにしてください。
 
