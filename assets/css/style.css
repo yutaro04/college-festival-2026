@@ -293,8 +293,10 @@ li { list-style: none; }
 .countdown__num { font-family: var(--font-en); font-size: 1.6rem; font-weight: 900; line-height: 1; }
 .countdown__unit { font-size: .82rem; font-weight: 700; }
 
+.hero__actions { margin: 14px 0 0; }
+
 .hero__note {
-  margin-top: 22px;
+  margin-top: 18px;
   font-size: .78rem;
   color: var(--ink-soft);
 }
@@ -354,10 +356,13 @@ li { list-style: none; }
 /* 背景の紙を活かすため、セクションは原則すべて透明。
    1つおきに薄い白をかけて区切りのリズムだけ残している。 */
 .section { padding: var(--section-pad) 0; position: relative; background: transparent; }
-/* セクション順：about → exhibitors → project → contents → floor → college → access → support → faq */
+/* セクション順：about → exhibitors → goods → project → contents → floor
+                 → message → college → access → support → faq */
 .section--exhibitors{ background: rgba(255, 255, 255, .4); }
-.section--contents  { background: rgba(255, 255, 255, .4); }
-.section--support   { background: rgba(255, 255, 255, .4); }
+.section--project   { background: rgba(255, 255, 255, .4); }
+.section--floor     { background: rgba(255, 255, 255, .4); }
+.section--access    { background: rgba(255, 255, 255, .4); }
+.section--faq       { background: rgba(255, 255, 255, .4); }
 .section--college  { background: var(--ink); color: var(--paper); }
 
 .section__head { margin-bottom: clamp(40px, 6vw, 64px); max-width: 720px; }
@@ -492,7 +497,13 @@ li { list-style: none; }
   font-size: clamp(.88rem, 1.9vw, .98rem);
   color: rgba(233, 242, 243, .8);
   margin: 0;
+  /* 本文が長いので左寄せにし、読みやすい行長に制限する */
+  text-align: left;
+  max-width: 62ch;
+  margin-inline: auto;
 }
+.concept__text p { margin: 0 0 1em; }
+.concept__text p:last-child { margin-bottom: 0; }
 
 /* ---------- stats ---------- */
 .stats {
@@ -743,6 +754,72 @@ li { list-style: none; }
 /* 企画が1件だけのときに横長になりすぎないよう上限を設ける */
 .exhibits:has(.exhibit:only-child) { grid-template-columns: minmax(0, 480px); }
 
+/* ---------- 物販 ---------- */
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+.goods__item {
+  margin: 0;
+  padding: clamp(16px, 2.5vw, 24px);
+  border-radius: var(--radius);
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.goods__item img {
+  width: 100%;
+  /* 2枚の写真で比率が少し違うため、枠を揃えて見出しの高さを合わせる。
+     白いスウェットがカードの白地に溶けないよう、薄い下地を敷く。 */
+  aspect-ratio: 2 / 1;
+  object-fit: contain;
+  background: #f2f6f7;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+}
+.goods__item figcaption {
+  margin-top: 14px;
+  font-size: .85rem;
+  font-weight: 700;
+  color: var(--c-flame);
+  letter-spacing: .06em;
+}
+.goods__actions { margin: 28px 0 0; }
+.goods__note {
+  margin: 12px 0 0;
+  font-size: .8rem;
+  color: var(--ink-soft);
+}
+.goods__note .tag { margin-left: 4px; }
+
+/* ---------- 委員長メッセージ ---------- */
+.message {
+  padding: clamp(28px, 4vw, 44px) clamp(24px, 4vw, 48px);
+  border-radius: var(--radius);
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--c-vermilion);
+}
+.message p {
+  font-size: clamp(.9rem, 1.9vw, .97rem);
+  color: var(--ink-soft);
+  margin: 0 0 1.2em;
+}
+.message__sign {
+  margin: 1.8em 0 0 !important;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  text-align: right;
+  font-size: .85rem !important;
+}
+.message__sign strong {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--ink);
+}
+
 /* ---------- floor ---------- */
 .building {
   display: flex;
@@ -939,6 +1016,19 @@ li { list-style: none; }
 .support__card h3 { font-size: 1.15rem; font-weight: 900; margin-bottom: .7em; }
 .support__card p { font-size: .9rem; color: var(--ink-soft); }
 
+/* ボタンが2つ以上並んでも、狭い画面で折り返して収まるようにする */
+.support__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+.support__note {
+  margin-top: 12px;
+  font-size: .76rem !important;
+  color: var(--ink-faint) !important;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -1029,6 +1119,8 @@ li { list-style: none; }
   margin-top: 28px;
 }
 .cta__note { margin-top: 18px; font-size: .76rem; color: var(--ink-faint); }
+.cta__note a { color: var(--c-flame); font-weight: 700; text-decoration: none; }
+.cta__note a:hover { text-decoration: underline; }
 
 /* ---------- footer ---------- */
 .site-footer {
