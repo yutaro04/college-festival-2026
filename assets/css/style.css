@@ -1335,6 +1335,57 @@ li { list-style: none; }
 .sponsor-hero__meta dd { font-size: clamp(.9rem, 1.9vw, 1.02rem); font-weight: 700; }
 .sponsor-hero__actions { margin: clamp(24px, 4vw, 32px) 0 0; }
 
+/* ---------- PDF掲載写真 ---------- */
+.sponsor-hero__layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: clamp(28px, 4vw, 48px);
+}
+.sponsor-hero__copy { min-width: 0; }
+.sponsor-photo { min-width: 0; margin: 0; }
+.sponsor-photo img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+}
+.sponsor-photo figcaption {
+  margin-top: 10px;
+  font-size: .76rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+.sponsor-hero__photo img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+.sponsor-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: clamp(28px, 4vw, 40px);
+}
+.sponsor-gallery img { aspect-ratio: 3 / 2; object-fit: cover; }
+.sponsor-gallery__wide { grid-column: 1 / -1; }
+.sponsor-gallery__wide img { aspect-ratio: auto; }
+.sponsor-gallery__note {
+  margin: 16px 0 0;
+  font-size: .74rem;
+  color: var(--ink-faint);
+}
+.sponsor-photo--spaced { margin-top: clamp(28px, 4vw, 40px); }
+.sponsor-gallery--making { grid-template-columns: 1.9fr 1fr; }
+.sponsor-gallery--making img { height: clamp(240px, 32vw, 340px); aspect-ratio: auto; }
+
+@media (max-width: 960px) {
+  .sponsor-hero__layout { grid-template-columns: 1fr; }
+  .sponsor-hero__photo { max-width: 720px; }
+}
+@media (max-width: 680px) {
+  .sponsor-gallery { grid-template-columns: 1fr; gap: 24px; }
+  .sponsor-gallery img { aspect-ratio: auto; height: auto; }
+}
+
 /* ---------- 本文 ---------- */
 .section--sponsor-intro   { background: transparent; }
 .section--sponsor-merit   { background: rgba(255, 255, 255, .4); }
