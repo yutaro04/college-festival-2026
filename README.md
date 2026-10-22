@@ -181,6 +181,28 @@ Image.open('assets/img/housee.png').convert('RGB').save(
 | `<span class="tag tag--inner">ハウス企画</span>` | 灰 | 企画の区分 |
 | `<span class="tag tag--tbd">調整中</span>` | 黄 | 未確定の情報 |
 
+### 協賛専用ページについて
+
+協賛のご案内は、`index.html` の中に `id="sponsor"` として入っています。
+URL の末尾が `#sponsor` のときだけ、トップページと入れ替わって表示されます。
+
+```
+https://shimokita-college-festival-2026.tokyo/#sponsor
+```
+
+この URL をそのまま協賛候補の企業さまに送れば、協賛ページが直接開きます。
+ブラウザの「戻る」も効きます。
+
+GitHub Pages は `sponsor.html` のような別ファイルも普通に置けるので、
+本当に別 URL にしたくなった場合は、`#sponsor` のブロックを切り出して
+別ファイルにするだけで移行できます（その場合は共有済みの `#sponsor` URL から
+リダイレクトする仕組みを別途用意してください）。
+
+切り替えの処理は `assets/js/main.js` の「ページ内の別ページ切り替え」にあります。
+
+内容は `assets/kyousan.pdf`（協賛企業・店舗様募集のご案内）をもとにしています。
+PDF は `.gitignore` で除外しているため、リポジトリには含まれません。
+
 ### 「準備中」バッジの外し方
 
 情報が確定していない箇所には黄色いバッジが付いています。
