@@ -83,6 +83,14 @@ python3 -m http.server 8000
 
 文言はすべて `index.html` に直接書かれています。該当箇所を書き換えて push すれば反映されます。
 
+CSS・JavaScriptを変更するときは、`index.html` の読み込みURLに付けた `?v=` も更新してください。
+GitHub Pagesやブラウザに古いファイルがキャッシュされ、新しいページ切り替えなどが動かなくなるのを防ぎます。
+以下で変更後のファイルのSHA-256を確認し、先頭12文字をそれぞれの `?v=` に設定します。
+
+```sh
+shasum -a 256 assets/css/style.css assets/js/main.js
+```
+
 ### 出展企画を追加する
 
 `index.html` の「出展企画」セクション（`id="exhibitors"`）にある
