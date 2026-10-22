@@ -64,6 +64,9 @@
 
 <main id="main">
 
+<!-- 通常ページ（#sponsor のときは JS で非表示にします） -->
+<div id="view-home">
+
 <!-- ============ ヒーロー ============ -->
 <section class="hero" id="top">
   <div class="hero__inner">
@@ -857,14 +860,12 @@
         <p>
           協賛プランをご用意しています。詳しい内容とお申し込み方法は、下記のご案内をご覧ください。
         </p>
-        <!-- ▼ 専用ページができたら、このリンク先を差し替えてください -->
         <p class="support__actions">
-          <a class="btn btn--primary" href="https://docs.google.com/document/d/1rKwsEAEbnf0Qg1PgLZnqBD8XjyXLs4gBzvHvIhkSZSE/edit?usp=sharing" target="_blank" rel="noopener">
-            協賛のご案内を見る <span aria-hidden="true">↗</span>
+          <a class="btn btn--primary" href="#sponsor">
+            協賛のご案内を見る <span aria-hidden="true">→</span>
           </a>
           <a class="btn btn--ghost" href="mailto:festival-shimokita@hlab.college">お問い合わせ</a>
         </p>
-        <p class="support__note">※ Google ドキュメントが別タブで開きます。</p>
       </article>
 
       <article class="support__card reveal">
@@ -951,6 +952,365 @@
   </div>
 </section>
 
+</div><!-- /#view-home -->
+
+<!-- ============================================================
+     協賛専用ページ
+     URL の末尾が #sponsor のときだけ表示される、ページ内の別ページです。
+     内容は assets/kyousan.pdf（協賛企業・店舗様募集のご案内）に基づきます。
+     ============================================================ -->
+<div id="sponsor" hidden>
+
+  <!-- 見出し -->
+  <section class="sponsor-hero">
+    <div class="container">
+      <p class="sponsor-hero__back">
+        <a href="#top">&larr; 文化祭トップへ戻る</a>
+      </p>
+      <p class="sponsor-hero__eyebrow">FOR SPONSORS</p>
+      <h1 class="sponsor-hero__title">
+        協賛企業・店舗さま<br>募集のご案内
+      </h1>
+      <p class="sponsor-hero__lead">
+        「カレッジ文化祭〜まぜまぜ。〜」
+      </p>
+      <dl class="sponsor-hero__meta">
+        <div>
+          <dt>一般公開</dt>
+          <dd>2026年11月14日（土）・15日（日）</dd>
+        </div>
+        <div>
+          <dt>会場</dt>
+          <dd>SHIMOKITA COLLEGE（下北沢駅徒歩3分）</dd>
+        </div>
+      </dl>
+      <p class="sponsor-hero__actions">
+        <a class="btn btn--primary"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSfoyjNJbQrJxrhhYj4jNlj5dZY8mfBt6LR09u3DqpVYuuyqEw/viewform"
+           target="_blank" rel="noopener">
+          お問い合わせ・お申し込み <span aria-hidden="true">↗</span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- はじめに -->
+  <section class="section section--sponsor-intro">
+    <div class="container container--narrow">
+      <header class="section__head">
+        <p class="section__label">INTRODUCTION</p>
+        <h2 class="section__title">はじめに</h2>
+      </header>
+      <div class="sponsor-prose">
+        <p>
+          SHIMOKITA COLLEGE は、下北沢にある、高校生から社会人までが共に暮らしながら学ぶレジデンシャルカレッジです。
+          年に一度、住人であるカレッジ生が企画から運営までを手がける「カレッジ文化祭」を開催しており、今年で第6回を迎えます。
+        </p>
+        <p>
+          昨年度は「まちとつくる文化祭」をテーマに、2日間で約1,200名の方にご来場いただき、地域の企業・店舗の皆様からも温かいご支援をいただきました。
+        </p>
+        <p>
+          今年度のスローガンは「まぜまぜ。」。住人、卒業生、保護者、そして地域の皆様が、まざり合う2日間を目指しています。
+          この想いを一緒に形にしてくださる、協賛企業・店舗の皆様を募集いたします。
+        </p>
+      </div>
+
+      <ul class="sponsor-stats">
+        <li>
+          <span class="sponsor-stats__num">1,200</span><span class="sponsor-stats__unit">名</span>
+          <span class="sponsor-stats__label">昨年度の来場者数</span>
+        </li>
+        <li>
+          <span class="sponsor-stats__num">1,500</span><span class="sponsor-stats__unit">名</span>
+          <span class="sponsor-stats__label">今年度の目標来場者数</span>
+        </li>
+        <li>
+          <span class="sponsor-stats__num">6</span><span class="sponsor-stats__unit">回目</span>
+          <span class="sponsor-stats__label">2026年で第6回の開催</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- メリット -->
+  <section class="section section--sponsor-merit">
+    <div class="container container--narrow">
+      <header class="section__head">
+        <p class="section__label">MERIT</p>
+        <h2 class="section__title">ご協賛いただくメリット</h2>
+      </header>
+      <ul class="merits">
+        <li>今年度は約1,500名のご来場を目指しています</li>
+        <li>カレッジ生や卒業生、保護者、地域の方々に、貴社・貴店を知っていただく機会になります</li>
+        <li>ホームページ、当日配布のパンフレット、会場入口のボードに、社名・店名やロゴを掲載します</li>
+        <li>当日の受付で、チラシや商品券などを来場者にお配りします</li>
+        <li>30,000円以上のプランでは、会場内に貴社・貴店のポスターを掲示します</li>
+        <li>50,000円プランでは、文化祭当日に館内で専用ブースを出展いただけます（1社限定）</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- プラン -->
+  <section class="section section--sponsor-plans">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__label">PLANS</p>
+        <h2 class="section__title">協賛プラン</h2>
+        <p class="section__desc">3つのプランをご用意しています。</p>
+      </header>
+
+      <div class="plans">
+        <article class="plan">
+          <p class="plan__name">まずは名前で応援</p>
+          <p class="plan__price"><span>10,000</span>円</p>
+          <p class="plan__caption">- リターン内容 -</p>
+          <ul class="plan__list">
+            <li>ホームページ・パンフレット・会場入口ボードに社名・店名を掲載</li>
+            <li>当日受付でチラシや商品券などを配布可（1種類まで）</li>
+          </ul>
+          <div class="plan__detail">
+            <p>「文化祭を応援したい」というお気持ちを、お名前で形にしていただくプランです。はじめて協賛される方や、まずは気軽に関わってみたい方におすすめです。</p>
+            <h4>ホームページ・パンフレット・会場入口ボードに社名・店名を掲載</h4>
+            <p>来場者全員にお配りするパンフレット、来場者が最初に目にする会場入口のボード、文化祭のホームページの3か所に、社名・店名を掲載します。</p>
+            <h4>当日受付でチラシや商品券などを配布（1種類まで）</h4>
+            <p>受付で来場者にお渡しする案内と一緒に、貴社・貴店のチラシや商品券を1種類お配りします。</p>
+          </div>
+        </article>
+
+        <article class="plan plan--recommended">
+          <p class="plan__badge">おすすめ</p>
+          <p class="plan__name">お店・会社を知ってもらう</p>
+          <p class="plan__price"><span>30,000</span>円</p>
+          <p class="plan__caption">- リターン内容 -</p>
+          <ul class="plan__list">
+            <li>ホームページ・パンフレット・会場入口ボードにロゴを<strong>大きく</strong>掲載</li>
+            <li>会場内にポスターを掲示（1枚）</li>
+            <li>当日受付でチラシや商品券などを配布可（2種類まで）</li>
+          </ul>
+          <div class="plan__detail">
+            <p>来場者に、貴社・貴店を「知ってもらう」ことに力を入れたプランです。地域の方や若い世代に、お店や会社を覚えてもらいたい方におすすめです。</p>
+            <h4>ホームページ・パンフレット・会場入口ボードにロゴを大きく掲載</h4>
+            <p>10,000円プランと同じ3か所に、ロゴを大きく掲載します。文字だけよりも目に留まりやすく、来場者の記憶に残りやすくなります。</p>
+            <h4>会場内にポスターを掲示（1枚）</h4>
+            <p>会場内の、来場者が行き交う場所に、貴社・貴店のポスターを1枚掲示します。営業時間やおすすめの商品など、伝えたいことを自由に載せていただけます。</p>
+            <h4>当日受付でチラシや商品券などを配布（2種類まで）</h4>
+            <p>チラシや商品券など、2種類までお配りします。</p>
+          </div>
+        </article>
+
+        <article class="plan">
+          <p class="plan__badge plan__badge--limited">1社限定</p>
+          <p class="plan__name">当日、来場者と直接つながる</p>
+          <p class="plan__price"><span>50,000</span>円</p>
+          <p class="plan__caption">- リターン内容 -</p>
+          <ul class="plan__list">
+            <li><strong>文化祭当日（11/14・15）、館内に専用ブースを出展</strong></li>
+            <li>パンフレット・会場入口ボードにロゴを<strong>大きく</strong>掲載</li>
+            <li>ホームページに紹介ページを掲載</li>
+            <li>会場内にポスターを掲示（1枚）</li>
+            <li>当日受付でチラシや商品券などを配布可（種類の制限なし）</li>
+          </ul>
+          <div class="plan__detail">
+            <p>文化祭当日に、来場者と直接お話しいただけるプランです。1社限定でのご案内となります。</p>
+            <h4>文化祭当日（11/14・15）、館内に専用ブースを出展</h4>
+            <p>館内に貴社・貴店の専用ブースをご用意します。商品やサービスの紹介、体験など、ブースの使い方はご相談のうえ一緒に決めさせていただきます。</p>
+            <h4>パンフレット・会場入口ボードにロゴを大きく掲載</h4>
+            <p>30,000円プランと同じく、ロゴを大きく掲載します。</p>
+            <h4>ホームページに紹介ページを掲載</h4>
+            <p>文化祭のホームページに、いただいた紹介文や写真をもとにした、貴社・貴店の紹介ページを作成します。</p>
+            <h4>会場内にポスターを掲示（1枚）</h4>
+            <p>30,000円プランと同じく、会場内にポスターを1枚掲示します。</p>
+            <h4>当日受付でチラシや商品券などを配布（種類の制限なし）</h4>
+            <p>配布物の種類に制限はありません。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 比較表 -->
+  <section class="section section--sponsor-compare">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__label">COMPARISON</p>
+        <h2 class="section__title">協賛プラン比較表</h2>
+      </header>
+
+      <p class="compare__hint" aria-hidden="true">→ 横にスクロールできます</p>
+      <div class="compare">
+        <table class="compare__table">
+          <caption class="sr-only">協賛プランごとのリターン内容の比較</caption>
+          <thead>
+            <tr>
+              <th scope="col">項目</th>
+              <th scope="col">10,000円</th>
+              <th scope="col" class="is-recommended">30,000円<br><small>おすすめ</small></th>
+              <th scope="col">50,000円<br><small>1社限定</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">ホームページ掲載</th>
+              <td>社名・店名</td>
+              <td class="is-recommended">ロゴ（大）</td>
+              <td>紹介ページ</td>
+            </tr>
+            <tr>
+              <th scope="row">パンフレット掲載</th>
+              <td>社名・店名</td>
+              <td class="is-recommended">ロゴ（大）</td>
+              <td>ロゴ（大）</td>
+            </tr>
+            <tr>
+              <th scope="row">会場入口ボード</th>
+              <td>社名・店名</td>
+              <td class="is-recommended">ロゴ（大）</td>
+              <td>ロゴ（大）</td>
+            </tr>
+            <tr>
+              <th scope="row">会場内にポスター掲示（1枚）</th>
+              <td><span class="mark mark--no" aria-label="なし">×</span></td>
+              <td class="is-recommended"><span class="mark mark--yes" aria-label="あり">○</span></td>
+              <td><span class="mark mark--yes" aria-label="あり">○</span></td>
+            </tr>
+            <tr>
+              <th scope="row">受付でのチラシ・商品券配布</th>
+              <td>1種類</td>
+              <td class="is-recommended">2種類</td>
+              <td>制限なし</td>
+            </tr>
+            <tr>
+              <th scope="row">専用ブース出展</th>
+              <td><span class="mark mark--no" aria-label="なし">×</span></td>
+              <td class="is-recommended"><span class="mark mark--no" aria-label="なし">×</span></td>
+              <td><span class="mark mark--yes" aria-label="あり">○</span></td>
+            </tr>
+            <tr>
+              <th scope="row">写真付き活動報告</th>
+              <td><span class="mark mark--yes" aria-label="あり">○</span></td>
+              <td class="is-recommended"><span class="mark mark--yes" aria-label="あり">○</span></td>
+              <td><span class="mark mark--yes" aria-label="あり">○</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <ul class="notes">
+        <li>パンフレットへの掲載は、11月10日までにご協賛いただいた場合に限ります</li>
+        <li>ロゴを掲載するプランでは、社名・店名もあわせて掲載します</li>
+        <li>ポスターや配布物は、事前にお預かりします（サイズや部数はご相談ください）</li>
+        <li>全プランの皆様に、文化祭のあと写真付きの活動報告をお送りします</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 協賛金の使い道 -->
+  <section class="section section--sponsor-use">
+    <div class="container container--narrow">
+      <header class="section__head">
+        <p class="section__label">HOW WE USE IT</p>
+        <h2 class="section__title">協賛金の使い道</h2>
+      </header>
+      <div class="sponsor-prose">
+        <p>
+          いただいた協賛金は、当日の装飾、ステージ、飲食、パンフレット、前夜祭・後夜祭など、文化祭の運営に大切に活用させていただきます。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- お申し込み方法 -->
+  <section class="section section--sponsor-apply">
+    <div class="container container--narrow">
+      <header class="section__head">
+        <p class="section__label">HOW TO APPLY</p>
+        <h2 class="section__title">お申し込み方法</h2>
+      </header>
+      <div class="sponsor-prose">
+        <p>
+          下記のフォームより、お問い合わせ・お申し込みください。担当者より折り返しご連絡いたします。
+          ご希望があれば、担当者が直接ご説明に伺います。
+        </p>
+      </div>
+
+      <p class="sponsor-apply__actions">
+        <a class="btn btn--primary"
+           href="https://docs.google.com/forms/d/e/1FAIpQLSfoyjNJbQrJxrhhYj4jNlj5dZY8mfBt6LR09u3DqpVYuuyqEw/viewform"
+           target="_blank" rel="noopener">
+          お問い合わせ・お申し込みフォーム <span aria-hidden="true">↗</span>
+        </a>
+      </p>
+
+      <dl class="sponsor-apply__info">
+        <div>
+          <dt>お支払い</dt>
+          <dd>銀行振込にて承ります。請求書・領収書の発行をご希望の場合は、担当者にお知らせください。</dd>
+        </div>
+        <div>
+          <dt>メールでのお問い合わせ</dt>
+          <dd><a href="mailto:festival-shimokita@hlab.college">festival-shimokita@hlab.college</a></dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- 委員長メッセージ -->
+  <section class="section section--sponsor-message">
+    <div class="container">
+      <header class="section__head">
+        <p class="section__label">MESSAGE</p>
+        <h2 class="section__title">委員長よりメッセージ</h2>
+      </header>
+
+      <div class="chair">
+        <!-- ▼ 掲載を取りやめる場合は、この figure ごと削除してください -->
+        <figure class="chair__photo">
+          <img src="assets/img/chair.webp"
+               alt="第6回カレッジ文化祭 委員長 森内貴之。竹林を背に、紋付袴姿で立っている。"
+               width="900" height="1201" loading="lazy" decoding="async">
+        </figure>
+        <div class="chair__text">
+          <p>
+            ご協賛は、私たちカレッジ生一人ひとりが、それぞれの夢や挑戦に向かって、この場所から新たな一歩を踏み出すための大きな力になります。
+            また、皆様から寄せられた応援のお気持ちは、私たちにとって大きな自信と励みになっています。
+          </p>
+          <p>
+            私たちカレッジ生一同、いただいたお力添えと温かいお気持ちに、挑戦する姿をもってお応えできればと思って文化祭に臨んでいます。
+          </p>
+          <p>
+            文化祭当日は、私たちが生き生きとした姿をお見せできること、そして皆様に直接お会いできることを、心より楽しみにしております。
+          </p>
+          <p class="chair__sign">
+            第6回カレッジ文化祭 委員長<br><strong>森内貴之</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最後に -->
+  <section class="sponsor-closing">
+    <div class="container container--narrow">
+      <div class="sponsor-closing__inner">
+        <h2>最後に</h2>
+        <p>
+          カレッジ生の挑戦の集大成である「カレッジ文化祭」。<br>
+          地域や企業の皆様の力強いサポートがあってこそ、この特別な2日間が完成します。<br>
+          皆様からのご協賛を、心よりお待ちしております。
+        </p>
+        <p class="sponsor-closing__actions">
+          <a class="btn btn--primary"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSfoyjNJbQrJxrhhYj4jNlj5dZY8mfBt6LR09u3DqpVYuuyqEw/viewform"
+             target="_blank" rel="noopener">
+            お問い合わせ・お申し込み <span aria-hidden="true">↗</span>
+          </a>
+          <a class="btn btn--ghost" href="#top">文化祭トップへ戻る</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#sponsor -->
 </main>
 
 <!-- ============ フッター ============ -->
@@ -977,6 +1337,7 @@
           <li><a href="#message">委員長メッセージ</a></li>
           <li><a href="#access">アクセス</a></li>
           <li><a href="#support">協賛・応援</a></li>
+          <li><a href="#sponsor">協賛のご案内</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </nav>

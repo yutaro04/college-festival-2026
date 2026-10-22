@@ -88,6 +88,42 @@
   }
 
   /* ---------------------------------------------------------
+     ページ内の別ページ切り替え
+     GitHub Pages で別ファイルを増やさずに、#sponsor のときだけ
+     協賛ページを表示します。URL をそのまま共有すれば協賛ページが開きます。
+     --------------------------------------------------------- */
+  var viewHome = document.getElementById('view-home');
+  var viewSponsor = document.getElementById('sponsor');
+  var BASE_TITLE = document.title;
+  var SPONSOR_TITLE = '協賛企業・店舗さま募集のご案内｜第6回カレッジ文化祭〜まぜまぜ。〜';
+
+  function syncView() {
+    if (!viewHome || !viewSponsor) return;
+
+    var isSponsor = location.hash === '#sponsor';
+    viewHome.hidden = isSponsor;
+    viewSponsor.hidden = !isSponsor;
+    document.body.classList.toggle('is-subpage', isSponsor);
+    document.title = isSponsor ? SPONSOR_TITLE : BASE_TITLE;
+
+    // 別ページに移った感覚になるよう、先頭から読み始められるようにする
+    if (isSponsor) window.scrollTo(0, 0);
+    closeNav();
+  }
+
+  if (viewHome && viewSponsor) {
+    // ハッシュが空、または #top のときはトップの先頭へ戻す
+    window.addEventListener('hashchange', function () {
+      var wasSponsor = !viewSponsor.hidden;
+      syncView();
+      if (wasSponsor && (location.hash === '' || location.hash === '#top')) {
+        window.scrollTo(0, 0);
+      }
+    });
+    syncView();
+  }
+
+  /* ---------------------------------------------------------
      カウントダウン（開幕まであと何日）
      --------------------------------------------------------- */
   var countdown = document.getElementById('countdown');
