@@ -89,37 +89,76 @@
 
   /* ---------------------------------------------------------
      ページ内の別ページ切り替え
-     GitHub Pages で別ファイルを増やさずに、#sponsor のときだけ
-     協賛ページを表示します。URL をそのまま共有すれば協賛ページが開きます。
+     GitHub Pages で別ファイルを増やさずに、ハッシュに応じて
+     トップと各専用ページを入れ替えます。
+     URL をそのまま共有すれば、その専用ページが開きます。
+     ページを増やすときは SUBPAGES に1行足してください。
      --------------------------------------------------------- */
+  var SUBPAGES = {
+    '#sponsor':   { id: 'sponsor',   title: '協賛企業・店舗さま募集のご案内' },
+    '#supporter': { id: 'supporter', title: '個人応援（クラウドファンディング）のご案内' }
+  };
+
   var viewHome = document.getElementById('view-home');
-  var viewSponsor = document.getElementById('sponsor');
   var BASE_TITLE = document.title;
-  var SPONSOR_TITLE = '協賛企業・店舗さま募集のご案内｜第6回カレッジ文化祭〜まぜまぜ。〜';
 
-  function syncView() {
-    if (!viewHome || !viewSponsor) return;
+  // #supporter-apply のような専用ページ内のアンカーでも、
+  // その専用ページを開いたままにするため、対象要素の所属を調べる
+  function subpageForHash(hash) {
+    if (SUBPAGES[hash]) return SUBPAGES[hash];
+    if (hash.length < 2) return null;
 
-    var isSponsor = location.hash === '#sponsor';
-    viewHome.hidden = isSponsor;
-    viewSponsor.hidden = !isSponsor;
-    document.body.classList.toggle('is-subpage', isSponsor);
-    document.title = isSponsor ? SPONSOR_TITLE : BASE_TITLE;
+    var target = document.getElementById(hash.slice(1));
+    if (!target) return null;
 
-    // 別ページに移った感覚になるよう、先頭から読み始められるようにする
-    if (isSponsor) window.scrollTo(0, 0);
-    closeNav();
+    for (var key in SUBPAGES) {
+      var el = document.getElementById(SUBPAGES[key].id);
+      if (el && el.contains(target)) return SUBPAGES[key];
+    }
+    return null;
   }
 
-  if (viewHome && viewSponsor) {
-    // ハッシュが空、または #top のときはトップの先頭へ戻す
-    window.addEventListener('hashchange', function () {
-      var wasSponsor = !viewSponsor.hidden;
-      syncView();
-      if (wasSponsor && (location.hash === '' || location.hash === '#top')) {
-        window.scrollTo(0, 0);
-      }
-    });
+  function syncView() {
+    if (!viewHome) return;
+
+    var current = subpageForHash(location.hash);
+    var isSub = false;
+
+    for (var key in SUBPAGES) {
+      var el = document.getElementById(SUBPAGES[key].id);
+      if (!el) continue;
+      var active = !!current && SUBPAGES[key].id === current.id;
+      el.hidden = !active;
+      if (active) isSub = true;
+    }
+
+    viewHome.hidden = isSub;
+    document.body.classList.toggle('is-subpage', isSub);
+    document.title = isSub
+      ? current.title + '｜第6回カレッジ文化祭〜まぜまぜ。〜'
+      : BASE_TITLE;
+
+    closeNav();
+
+    // 表示を切り替えたあとで、改めて目的の位置へ移動する。
+    // ハッシュが変わった時点では対象がまだ hidden なので、
+    // ブラウザの自動スクロールが効かないため。
+    var hashId = location.hash.length > 1 ? location.hash.slice(1) : '';
+    var isViewRoot = hashId === '' || hashId === 'top'
+      || hashId === 'sponsor' || hashId === 'supporter';
+    var target = isViewRoot ? null : document.getElementById(hashId);
+
+    if (target) {
+      // scrollIntoView は scroll-padding-top を見てくれるので、
+      // 固定ヘッダーに隠れずに済む
+      target.scrollIntoView();
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  if (viewHome) {
+    window.addEventListener('hashchange', syncView);
     syncView();
   }
 
