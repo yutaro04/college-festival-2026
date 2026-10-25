@@ -784,6 +784,10 @@ li { list-style: none; }
   color: var(--c-flame);
   letter-spacing: .06em;
 }
+/* 説明文が複数段落になるため、段落間に余白をとる */
+.goods__lead p { margin: 0 0 .9em; }
+.goods__lead p:last-child { margin-bottom: 0; }
+
 .goods__actions { margin: 28px 0 0; }
 .goods__note {
   margin: 12px 0 0;
