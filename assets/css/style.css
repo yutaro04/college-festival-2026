@@ -914,11 +914,6 @@ li { list-style: none; }
   gap: 10px;
   margin-top: 14px;
 }
-.college__note {
-  margin-top: 10px;
-  font-size: .76rem;
-  color: rgba(253, 248, 241, .55) !important;
-}
 
 .college__building {
   display: flex;
