@@ -293,7 +293,12 @@ li { list-style: none; }
 .countdown__num { font-family: var(--font-en); font-size: 1.6rem; font-weight: 900; line-height: 1; }
 .countdown__unit { font-size: .82rem; font-weight: 700; }
 
-.hero__actions { margin: 14px 0 0; }
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 0;
+}
 
 .hero__note {
   margin-top: 18px;
@@ -898,17 +903,17 @@ li { list-style: none; }
 }
 .section--college .section__title { color: var(--paper); }
 .college__text p { color: rgba(233, 242, 243, .78); font-size: .95rem; }
-.college__link a {
-  display: inline-block;
-  margin-top: 8px;
+.college__lead {
+  margin-top: 1.4em !important;
   font-weight: 700;
-  font-size: .9rem;
-  color: var(--c-amber);
-  text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 2px;
+  color: var(--paper) !important;
 }
-.college__link a:hover { color: var(--c-gold); }
+.college__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
+}
 
 .college__building {
   display: flex;
@@ -1029,6 +1034,12 @@ li { list-style: none; }
 .btn--primary { background: var(--c-vermilion); color: var(--white); }
 .btn--primary:hover { background: var(--c-ember); }
 .btn--ghost { border: 1.5px solid currentColor; color: var(--c-flame); }
+/* 濃い背景の上で使うボタン */
+.btn--light {
+  border: 1.5px solid rgba(255, 255, 255, .5);
+  color: var(--paper);
+}
+.btn--light:hover { background: var(--paper); color: var(--ink); border-color: var(--paper); }
 .btn--ghost:hover { background: var(--c-flame); color: var(--white); border-color: var(--c-flame); }
 .btn[aria-disabled="true"] { opacity: .45; pointer-events: none; }
 
@@ -1149,6 +1160,25 @@ li { list-style: none; }
   color: rgba(233, 242, 243, .6);
   line-height: 1.8;
 }
+.site-footer__college { margin-right: auto; }
+.site-footer__college-title {
+  font-family: var(--font-en);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .14em;
+  color: var(--c-amber);
+  margin-bottom: 12px;
+}
+.site-footer__college ul { display: grid; gap: 8px; }
+.site-footer__college a {
+  font-size: .85rem;
+  text-decoration: none;
+  color: rgba(253, 248, 241, .78);
+  transition: color .2s;
+}
+.site-footer__college a:hover { color: var(--c-amber); }
+.site-footer__college a[aria-disabled="true"] { opacity: .45; pointer-events: none; }
+
 .site-footer__nav ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(140px, auto));
