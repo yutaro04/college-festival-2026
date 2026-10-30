@@ -810,6 +810,40 @@ li { list-style: none; }
 }
 .goods__note .tag { margin-left: 4px; }
 
+.goods__size { margin: 32px 0 0; max-width: 640px; }
+.goods__size-title {
+  margin: 0 0 12px;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  color: var(--ink);
+}
+.goods__size-scroll { overflow-x: auto; }
+.goods__size-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  font-size: .9rem;
+  text-align: center;
+}
+.goods__size-table th,
+.goods__size-table td {
+  padding: 10px 8px;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.goods__size-table thead th {
+  background: var(--ink);
+  color: var(--white);
+  font-family: var(--font-en);
+  letter-spacing: .08em;
+}
+.goods__size-table tbody th {
+  background: var(--paper-alt);
+  font-weight: 700;
+  color: var(--ink);
+}
+
 /* ---------- floor ---------- */
 .building {
   display: flex;
