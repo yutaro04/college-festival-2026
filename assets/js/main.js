@@ -163,6 +163,51 @@
   }
 
   /* ---------------------------------------------------------
+     ステージ企画：カレンダー形式のタイムテーブル
+     JS が動くときだけ非表示に切り替え、JS なしでは全パネルを表示します。
+     --------------------------------------------------------- */
+  var stageTabs = document.querySelectorAll('.stage-tab');
+
+  function selectStageTab(tab, focus) {
+    if (!tab) return;
+    Array.prototype.forEach.call(stageTabs, function (t) {
+      var selected = t === tab;
+      t.setAttribute('aria-selected', String(selected));
+      t.tabIndex = selected ? 0 : -1;
+      var panel = document.getElementById(t.getAttribute('aria-controls'));
+      if (!panel) return;
+      panel.hidden = !selected;
+      if (selected) {
+        Array.prototype.forEach.call(panel.querySelectorAll('.reveal'), function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+    });
+    if (focus) tab.focus();
+  }
+
+  if (stageTabs.length) {
+    var initialTab = document.querySelector('.stage-tab[aria-selected="true"]') || stageTabs[0];
+    selectStageTab(initialTab, false);
+
+    Array.prototype.forEach.call(stageTabs, function (tab, i) {
+      tab.addEventListener('click', function () { selectStageTab(tab, false); });
+      tab.addEventListener('keydown', function (e) {
+        var next = null;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          next = stageTabs[(i + 1) % stageTabs.length];
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          next = stageTabs[(i - 1 + stageTabs.length) % stageTabs.length];
+        }
+        if (next) {
+          e.preventDefault();
+          selectStageTab(next, true);
+        }
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
      カウントダウン（開幕まであと何日）
      --------------------------------------------------------- */
   var countdown = document.getElementById('countdown');
