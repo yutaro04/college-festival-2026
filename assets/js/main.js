@@ -5,8 +5,9 @@
 (function () {
   'use strict';
 
-  /* ---- 開催初日（カウントダウンの基準日） ---- */
+  /* ---- 開催期間（カウントダウンの基準日） ---- */
   var FESTIVAL_START = '2026-11-14T10:00:00+09:00';
+  var FESTIVAL_END = '2026-11-15T18:00:00+09:00';
 
   var prefersReducedMotion =
     window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -208,17 +209,26 @@
   }
 
   /* ---------------------------------------------------------
-     カウントダウン（開幕まであと何日）
+     カウントダウン（開幕まであと何日／開催期間中は「開催中」表示）
      --------------------------------------------------------- */
   var countdown = document.getElementById('countdown');
   var countdownNum = document.getElementById('countdownNum');
 
   if (countdown && countdownNum) {
     var start = new Date(FESTIVAL_START).getTime();
-    var diff = start - Date.now();
+    var end = new Date(FESTIVAL_END).getTime();
+    var now = Date.now();
+    var diff = start - now;
 
     if (!isNaN(start) && diff > 0) {
       countdownNum.textContent = String(Math.ceil(diff / 86400000));
+      countdown.hidden = false;
+    } else if (!isNaN(end) && now <= end) {
+      var countdownLabel = countdown.querySelector('.countdown__label');
+      var countdownUnit = countdown.querySelector('.countdown__unit');
+      if (countdownLabel) countdownLabel.hidden = true;
+      if (countdownUnit) countdownUnit.hidden = true;
+      countdownNum.textContent = '開催中';
       countdown.hidden = false;
     }
   }
