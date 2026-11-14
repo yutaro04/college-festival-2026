@@ -361,7 +361,7 @@ li { list-style: none; }
 /* 背景の紙を活かすため、セクションは原則すべて透明。
    1つおきに薄い白をかけて区切りのリズムだけ残している。 */
 .section { padding: var(--section-pad) 0; position: relative; background: transparent; }
-/* セクション順：about → exhibitors → goods → project → contents → floor
+/* セクション順：about → exhibitors → stage → goods → project → contents → floor
                  → message → college → access → support → faq */
 .section--exhibitors{ background: rgba(255, 255, 255, .4); }
 .section--project   { background: rgba(255, 255, 255, .4); }
@@ -767,6 +767,140 @@ li { list-style: none; }
 
 /* 企画が1件だけのときに横長になりすぎないよう上限を設ける */
 .exhibits:has(.exhibit:only-child) { grid-template-columns: minmax(0, 480px); }
+
+/* ---------- ステージ企画（タイムラインタブ） ---------- */
+.stage__intro {
+  font-size: clamp(.9rem, 1.9vw, 1rem);
+  color: var(--ink-soft);
+}
+.stage__intro p { margin-bottom: 1em; }
+.stage__intro p:last-child { margin-bottom: 0; }
+
+.stage__note {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+/* カレンダー形式のタイムテーブル: 日付見出し＋時間枠を上から下へ縦に並べる */
+.stage-tabs {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: clamp(24px, 4vw, 36px);
+  padding-left: 22px;
+}
+.stage-tabs::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 6px;
+  width: 2px;
+  background: var(--line);
+}
+.stage-day {
+  position: relative;
+  margin: 8px 0 2px;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  color: var(--c-vermilion);
+}
+.stage-day::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  width: 12px;
+  height: 12px;
+  margin-top: -6px;
+  border-radius: 50%;
+  background: var(--c-vermilion);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 1px var(--c-vermilion);
+}
+.stage-tab {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  transition: background .2s, color .2s, border-color .2s, transform .2s;
+}
+.stage-tab::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -19px;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  border-radius: 50%;
+  background: var(--panel);
+  border: 2px solid var(--c-flame);
+}
+.stage-tab:hover { border-color: var(--c-vermilion); transform: translateY(-2px); }
+.stage-tab__time {
+  flex: 0 0 132px;
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  color: var(--c-flame);
+}
+.stage-tab__title {
+  flex: 1;
+  font-size: .92rem;
+  font-weight: 900;
+  line-height: 1.5;
+}
+.stage-tab[aria-selected="true"] {
+  background: var(--c-vermilion);
+  border-color: var(--c-vermilion);
+  color: var(--white);
+}
+.stage-tab[aria-selected="true"]::before {
+  background: var(--c-gold);
+  border-color: var(--c-gold);
+}
+.stage-tab[aria-selected="true"] .stage-tab__time { color: var(--c-gold); }
+
+@media (max-width: 640px) {
+  .stage-tab { gap: 10px; padding: 10px 12px; }
+  .stage-tab__time { flex-basis: 104px; font-size: .78rem; }
+}
+
+.stage-panel[hidden] { display: none; }
+.stage-panel .exhibit { max-width: 780px; margin-inline: auto; }
+
+/* 企画概要の「意気込み」: 「このステージを通して実現したいこと」を100文字程度に要約したもの */
+.exhibit__ikigomi {
+  padding: 14px 16px;
+  border-left: 4px solid var(--c-vermilion);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(244, 73, 47, .07);
+  line-height: 1.8;
+}
+.exhibit__ikigomi strong { color: var(--c-flame); }
+
+/* ステージ登壇者の顔写真 */
+.stage-speaker__photo {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  margin-bottom: 8px;
+}
 
 /* ---------- 物販 ---------- */
 .goods {

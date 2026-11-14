@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&family=Zen+Old+Mincho:wght@400;500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=9d7450c8545c">
+<link rel="stylesheet" href="assets/css/style.css?v=4addccaba161">
 </head>
 <body>
 
@@ -45,6 +45,7 @@
       <ul class="nav__list">
         <li><a href="#about">文化祭について</a></li>
         <li><a href="#exhibitors">出展企画</a></li>
+        <li><a href="#stage">ステージ企画</a></li>
         <li><a href="#project">マイプロ・アワプロ</a></li>
         <li><a href="#contents">コンテンツ</a></li>
         <li><a href="#floor">フロア</a></li>
@@ -521,7 +522,6 @@
         </div>
       </article>
 
-
       <!-- 画像が届いたら exhibit--text を外し、.exhibit__visual を足してください -->
       <article class="exhibit exhibit--text reveal">
         <div class="exhibit__body">
@@ -550,6 +550,431 @@
       出展場所・販売価格・営業時間は決まり次第お知らせします。
       <span class="tag tag--tbd">詳細 調整中</span>
     </p>
+  </div>
+</section>
+
+<!-- ============ ステージ企画 ============ -->
+<section class="section section--stage" id="stage">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="section__label">STAGE</p>
+      <h2 class="section__title">ステージ企画</h2>
+      <div class="stage__intro">
+      <p>
+進路や働き方を考えるとき、すでにある職業や肩書きだけでは、自分の未来の可能性を十分に想像できないことがあります。一方、自分の「好き」や違和感、問いを追い続けた結果、それが誰かを笑顔にしたり、誰かに必要とされたり、対価を得る仕事へと育っている人がいます。
+</p>
+      <p>
+そうした人たちの話から、「こういう生き方もあるんだ」「自分の関心も、こんなふうに社会とつながるかもしれない」と、カレッジ生や来場者の発想が広がる場をつくりたいと考えています。
+</p>
+      <p>
+目指すのは、成功事例や一般論を一方的に聞いて終わる場ではありません。その人が何を大切にして、なぜその道を選び、どこで悩み、どう乗り越えてきたのか。検索すれば出てくる情報だけでなく、「ここに来て、本人から聞けてよかった」と思える話を届けたいと考えています。
+</p>
+      </div>
+    </header>
+
+    <p class="stage__note reveal">カレンダーの時間枠から見たい企画を選ぶと、その企画の概要が表示されます。</p>
+
+    <div class="stage-tabs reveal" role="tablist" aria-label="ステージ企画のタイムテーブル">
+      <p class="stage-day">11月14日（土）</p>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-suki" aria-controls="stage-panel-suki" aria-selected="true">
+        <span class="stage-tab__time">12:00〜13:00</span>
+        <span class="stage-tab__title">カレッジ生を知ってみる会</span>
+      </button>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-shimokita" aria-controls="stage-panel-shimokita" aria-selected="false">
+        <span class="stage-tab__time">13:30〜14:30</span>
+        <span class="stage-tab__title">【研究発表】下北沢への「地域愛着」シモキタが持つ魅力とは！</span>
+      </button>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-shogi" aria-controls="stage-panel-shogi" aria-selected="false">
+        <span class="stage-tab__time">15:00〜16:00</span>
+        <span class="stage-tab__title">永世名人に聞く、プロ棋士っていつも何考えてるんですか？</span>
+      </button>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-college" aria-controls="stage-panel-college" aria-selected="false">
+        <span class="stage-tab__time">16:30〜17:30</span>
+        <span class="stage-tab__title">SHIMOKITA COLLEGEってなあに？</span>
+      </button>
+      <p class="stage-day">11月15日（日）</p>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-suzuki" aria-controls="stage-panel-suzuki" aria-selected="false">
+        <span class="stage-tab__time">12:00〜13:00</span>
+        <span class="stage-tab__title">元文科副大臣と一緒に考える、世界に違いをもたらすリーダーとは。</span>
+      </button>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-quiz" aria-controls="stage-panel-quiz" aria-selected="false">
+        <span class="stage-tab__time">13:30〜14:30</span>
+        <span class="stage-tab__title">伊沢拓司と語る。私が「クイズ王」になったわけ。</span>
+      </button>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-boardgame" aria-controls="stage-panel-boardgame" aria-selected="false">
+        <span class="stage-tab__time">15:00〜16:00</span>
+        <span class="stage-tab__title">女性初！バックギャモン世界王者に聞く、「得意」が「仕事」になる瞬間</span>
+      </button>
+      <button type="button" class="stage-tab" role="tab" id="stage-tab-todai" aria-controls="stage-panel-todai" aria-selected="false">
+        <span class="stage-tab__time">16:30〜17:30</span>
+        <span class="stage-tab__title">現役の国会議員と考える、私たちの公共性</span>
+      </button>
+    </div>
+
+    <div class="stage-panels">
+      <div class="stage-panel" role="tabpanel" id="stage-panel-suki" aria-labelledby="stage-tab-suki" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">カレッジ生を知ってみる会</h3>
+<p>
+<strong>村上智絢（むらかみ さあや）</strong> GLE プログラム生<br>
+#バイオメタン #廃食油 #SDGs #社会実装
+</p>
+<p>
+慶應義塾大学環境情報学部1年。環境問題の解決を目指し、「2050年、すべてのごみを資源にする」をテーマに研究・社会実装に取り組んでいる。主な研究テーマは、廃食油の回収システムの構築と、動物性ケラチン廃棄物のバイオ燃料化。全国1,741自治体を対象に廃食油の回収状況を調査するとともに、ヒト毛髪や羽毛などに含まれるケラチンを活用したバイオガス生成の研究を進めている。また、家庭から出る廃食油の回収率向上を目指し、回収拠点と利用者をつなぐ仕組み「ナビッシュ」を考案・開発。特許出願を行い、自治体や企業との連携による社会実装を目指している。研究にとどまらず、技術と社会の仕組みを組み合わせ、環境問題の解決につながる新しい価値の創出を目指している。
+</p>
+<p>
+<strong>樋野葵（ひの あおい）</strong> GLE プログラム生<br>
+#蝶 #外来植物 #理系研究
+</p>
+<p>
+茨城県つくば市出身。東京農工大学工学部生命工学科1年。幼少期から、外来種に興味を持ち、筑波大学や茨城県自然博物館での研究プログラムに採択され研究の基盤を学ぶ。外来種の蝶であるアカボシゴマダラの研究を小学3年生から現在まで継続している。高校2年生次には、トヨタモビリティ基金と東京大学が共同で立ち上げた Good Life on Earth プレイヤーに双子の妹とともに選出され、外来植物の有効利用法を現在も探求中。
+</p>
+<p>
+<strong>増渕瑠奈（ますぶち るな）</strong> SHIMOKITA COLLEGE 6期生<br>
+#生物 #ヒラメ #理系の社会教育
+</p>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月14日（土）12:00〜13:00</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>村上智絢、樋野葵、増渕瑠奈</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-shimokita" aria-labelledby="stage-tab-shimokita" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">【研究発表】下北沢への「地域愛着」シモキタが持つ魅力とは！</h3>
+<p class="exhibit__ikigomi">
+<strong>意気込み</strong><br>
+下北沢への愛着は、どうやって生まれるのか。研究の成果をわかりやすく伝え、来てくれた人がこのまちのよさを自分ごととして感じ、もっと好きになってもらえたらうれしいです。
+</p>
+<p>
+<strong>尹静一さん（イン セイイチ）</strong>
+</p>
+<p>
+千葉大学大学院 園芸学研究科 博士後期課程3年、シモキタ園藝部 部員。中国出身の留学生。2023年秋から下北沢エリアに暮らし始め、シモキタ園藝部に参加。現在はBONUS TRACK G2でもバイトをしている。写真と音楽が好き。
+</p>
+<p>
+下北沢で暮らすなかで、このまちが多くの人に愛されていることを感じ、「まちへの愛着はどうやって生まれるのだろう？」「どんな空間が『良い空間』だろう？」という疑問を持つようになった。そこから「地域愛着」を博士研究のテーマとし、下北沢でワークショップやアンケート調査を実施した。調査では地域の皆さんに温かく協力していただいた。今回は、その研究成果を皆さんにお伝えするとともに、感想や考えを聞けることを楽しみにしている。
+</p>
+<p>
+<strong>菅野恵里華（すがのえりか）</strong><br>
+#地域コミュニティ #まちづくり #心理学
+</p>
+<p>
+早稲田大学文学部心理学科3年。まちづくりや地域コミュニティデザインに関心があり、茨城県つくば市や長野県小布施町でまちづくり事業の長期インターンに取り組んできました。下北沢ならではの豊かな文化や、多様な人々が主体となってまちを育てていく姿に惹かれていて、これから下北沢のまちづくりに積極的に関わっていきたいです！
+</p>
+<p>
+<strong>坂本芽空（さかもと めく）</strong><br>
+#ダンス #人と人とのつながり #コミュニティづくり
+</p>
+<p>
+法政大学社会学部4年。大学で人の心理やコミュニケーションについて学びながら、人と人とのつながりや、コミュニティづくりに関心を持っています。大学では300人以上が所属するダンスサークルで公演の総合演出を務め、多様なメンバーと一つの舞台をつくり上げてきました。人と人が関わることで生まれる新しい価値や、誰もが自分らしくいられる居場所に魅力を感じています。下北沢ならではの文化や、人々の個性が交わるこのまちで、さまざまな人と関わりながら、新しいつながりや楽しさを生み出していきたいです！
+</p>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月14日（土）13:30〜14:30</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>尹静一さん、菅野恵里華、坂本芽空</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-shogi" aria-labelledby="stage-tab-shogi" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">永世名人に聞く、プロ棋士っていつも何考えてるんですか？</h3>
+<p class="exhibit__ikigomi">
+<strong>意気込み</strong><br>
+記事では読めない話を聞きたい。棋士人生と子育ての二つの軸、AI時代との向き合い方、下北名人戦やYouTubeの裏側まで。将棋を通じた交流の楽しさを届けます。
+</p>
+<p>
+<strong>森内俊之（もりうち としゆき）九段</strong>
+</p>
+<p>
+1970年生まれ、神奈川県横浜市出身。勝浦修九段門下。1987年プロデビュー。2002年、第60期名人戦において丸山忠久名人から初タイトルとなる名人位を獲得。2007年、第65期名人戦において通算5期目の名人位獲得により18世名人の資格を得る。
+</p>
+<p>
+主なタイトルの獲得実績：名人8期（永世名人）、竜王2期、棋王1期、王将1期、計12期。棋戦優勝14回。将棋大賞最優秀棋士賞2回。2007年、神奈川文化賞、横浜文化賞受賞。2017年、紫綬褒章受章。日本将棋連盟棋士会会長。ABEMA地域トーナメント「ルシーグ横浜」監督。地元横浜市青葉区で「青葉将棋クラブ」主宰。YouTube「森内俊之の森内チャンネル」運営。
+</p>
+<p>
+<strong>木浪花音（きなみ かのん）</strong>
+</p>
+<p>
+<strong>佐藤楽（さとう らく）</strong>
+</p>
+<p>
+慶應義塾大学将棋研究会所属。2006年生まれ、熊本県出身。2022年4月、熊本県立熊本高等学校入学、将棋部に入部し将棋を始める。2022年9月、初段に昇段。2023年5月、第35回 熊本県高校総文将棋部門 団体戦優勝（主将）。2023年8月、第59回 全国高校将棋選手権大会 予選リーグ3勝1敗。2024年5月、第36回 熊本県高校総文将棋部門 団体戦準優勝（主将）。
+</p>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月14日（土）15:00〜16:00</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>森内俊之さん、木浪花音、佐藤楽</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-college" aria-labelledby="stage-tab-college" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">SHIMOKITA COLLEGEってなあに？</h3>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月14日（土）16:30〜17:30</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>小峯愛華、一高学仁</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-suzuki" aria-labelledby="stage-tab-suzuki" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">元文科副大臣と一緒に考える、世界に違いをもたらすリーダーとは。</h3>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月15日（日）12:00〜13:00</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>鈴木寛さん</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-quiz" aria-labelledby="stage-tab-quiz" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">伊沢拓司と語る。私が「クイズ王」になったわけ。</h3>
+<p class="exhibit__ikigomi">
+<strong>意気込み</strong><br>
+「好き」を貫いてクイズ王になった伊沢さんに、迷いや谷をどう乗り越えたのかを聞きます。自分の「好き」も社会とつながるかもしれない、そんな勇気をもらえる時間にしたいです。
+</p>
+<p>
+<img class="stage-speaker__photo" src="assets/img/speaker-kunimi.jpg" alt="國見亮太の顔写真">
+<strong>國見亮太（くにみ りょうた）</strong><br>
+#大学2年生 #ランニング #主権者教育
+</p>
+<p>
+SHIMOKITA COLLEGE 6期生。2004年生まれ。北海道旭川市出身。通信制日本大学法学部政治経済学科2年。若者と政治のキョリを近づけるをモットーに活動している学生団体ivoteの代表。自治体やNPOと連携した主権者教育や、若者向けの対話イベントの企画・運営に取り組んでいます。高校3年から約3年間の病気による闘病生活を経験し、今年8月に上京。「きれいごとを現実に」を理念に、一人ひとりが自分の可能性を信じ、挑戦できるきっかけをつくりたいと考えています。
+</p>
+<p>
+<img class="stage-speaker__photo" src="assets/img/speaker-imura.jpg" alt="井村真知子の顔写真">
+<strong>井村真知子（いむら まちこ）</strong><br>
+#高校生1年生 #バドミントン #写真
+</p>
+<p>
+2010年生まれ。東京都出身。東京都立日比谷高等学校1年生。SHIMOKITA COLLEGEにBP（Boarding Program）生として入居中。今回のカレッジ文化祭では文化祭実行委員として渉外や装飾制作の一部を担当していた。進路について悩み中で、好きな教科は数学。
+</p>
+<p>
+<strong>伊沢拓司（いざわ たくし）さん</strong>（友情出演）
+</p>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月15日（日）13:30〜14:30</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>伊沢拓司さん、國見亮太、井村真知子</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-boardgame" aria-labelledby="stage-tab-boardgame" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">女性初！バックギャモン世界王者に聞く、「得意」が「仕事」になる瞬間</h3>
+<p class="exhibit__ikigomi">
+<strong>意気込み</strong><br>
+女性初の世界王者に、ボードゲームにおける性差や、女性プロとして考えていることを聞きます。「得意」が「仕事」になる瞬間を、一緒に考えたいです。
+</p>
+<p>
+<strong></strong>
+</p>
+<p>
+小学生の頃に不登校を経験するも、恩師との出会いから教育の道を志す。原体験から教育系NPO法人が持続可能な運営ができるようになるには？という観点で起業に興味を持つ。高校の仲間と会社登記、起業をしたのち、高校卒業後はNPO法人で子どもの自由な遊び場を理念としたプレーパークの現場に立ち、大学生として教員免許取得を目指している。この春からキャリアのため上京し、様々な教育を模索中。
+</p>
+<p>
+<strong>矢澤亜希子さん</strong>
+</p>
+<p>
+1980年生まれ。明治学院大学卒業。プロバックギャモンプレイヤー。日本人3人目の世界チャンピオン。2012年にステージIIICの子宮体がんが発覚。闘病しながらも14年、18年に世界選手権を制し、日本人初、女性として世界初の2度の世界チャンピオンに輝く。現在は世界各地の大会で活躍する傍ら、バックギャモンの普及活動にも尽力。著書に『運を加速させる習慣』、『がんとバックギャモン』がある。
+</p>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月15日（日）15:00〜16:00</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>矢澤亜希子さん、勝部菜月、森田恵美里</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+      <div class="stage-panel" role="tabpanel" id="stage-panel-todai" aria-labelledby="stage-tab-todai" tabindex="0">
+<article class="exhibit exhibit--text reveal">
+<div class="exhibit__body">
+<p class="exhibit__tags">
+<span class="tag">ステージ</span>
+<span class="tag">トーク</span>
+</p>
+<h3 class="exhibit__title">現役の国会議員と考える、私たちの公共性</h3>
+<p class="exhibit__ikigomi">
+<strong>意気込み</strong><br>
+東大をキーワードに、現役の国会議員と「私たちの公共性」を考えます。教育や民主主義について、気軽に、でも深く語り合える時間にしたいです。
+</p>
+<p>
+<img class="stage-speaker__photo" src="assets/img/speaker-kinoshita.jpg" alt="木下日菜子の顔写真">
+<strong>木下日菜子（きのした ひなこ）</strong><br>
+#京都 #元気いっぱい #夢いっぱい
+</p>
+<p>
+東京大学教養学部文科三類1年。京都府出身。立命館小学校中学校高等学校卒業。母校愛はかなり強い。それでも、大切にしてきたことを解体し、また組み立て、自由に飛び回るために、東京へ行こうと思った。宗教・思想・政治など人文科学や社会科学に広く興味がある。くるりと宇多田ヒカルと椎名林檎、OasisやRadioheadが好き。毎日楽しく生きている。なんと、道雄さんの下クラ。
+</p>
+<p>
+<img class="stage-speaker__photo" src="assets/img/speaker-sawachika.jpg" alt="澤近大地の顔写真">
+<strong>澤近大地（さわちか だいち）</strong><br>
+#創造性 #好奇心 #夢
+</p>
+<p>
+東京大学教養学部理科一類2年。愛媛県出身。地元愛はかなり強い。それでも、さらなる世界を見てみたく、大きな夢を抱いて東京に来た。高校の頃よりロボットの研究を行い、推薦で東大に入学。社会システム論、情報通信技術、教育、国際関係論等に関心がある。現地の大学とパートナーシップを築き、南アフリカ共和国において国際教育協力活動を行う。最近、東大を辞めたいと思っている。なんと安野さんの下クラ。
+</p>
+<p>
+<img class="stage-speaker__photo" src="assets/img/speaker-kawai.jpg" alt="河合道雄さんの顔写真">
+<strong>河合道雄（かわい みちお）さん</strong>
+</p>
+<dl class="exhibit__by">
+<div>
+<dt>日時</dt>
+<dd>2026年11月15日（日）16:30〜17:30</dd>
+</div>
+<div>
+<dt>集合時間</dt>
+<dd>開演30分前にお越しいただけますと幸いです</dd>
+</div>
+<div>
+<dt>場所</dt>
+<dd>SHIMOKITA COLLEGE 1階ステージ</dd>
+</div>
+<div>
+<dt>登壇者</dt>
+<dd>河合道雄さん、木下日菜子、澤近大地</dd>
+</div>
+</dl>
+</div>
+</article>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -718,7 +1143,7 @@
         <span class="card__icon" aria-hidden="true">🎤</span>
         <h3>ステージ企画</h3>
         <p>1階のステージで、ゲストを招いたトークセッションを中心に全8企画を予定。カレッジ生による企画枠もあります。</p>
-        <p class="card__meta"><span class="tag tag--tbd">出演者 調整中</span></p>
+        <p class="card__meta"><a href="#stage">決まった企画から紹介中 →</a></p>
       </article>
 
       <article class="card reveal" style="--card-accent: var(--c-amber)">
@@ -1777,6 +2202,7 @@
         <ul>
           <li><a href="#about">文化祭について</a></li>
           <li><a href="#exhibitors">出展企画</a></li>
+          <li><a href="#stage">ステージ企画</a></li>
           <li><a href="#goods">物販</a></li>
           <li><a href="#project">マイプロ・アワプロ</a></li>
           <li><a href="#contents">コンテンツ</a></li>
@@ -1797,6 +2223,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=e6472530c525"></script>
+<script src="assets/js/main.js?v=b8a287bf6fbf"></script>
 </body>
 </html>
